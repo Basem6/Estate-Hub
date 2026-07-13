@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500" xmlns:bx="https://boxy-svg.com">
+  <defs>
+    <bx:export>
+      <bx:file format="svg"/>
+    </bx:export>
+  </defs>
+  <text style="font-family: Arial, sans-serif; font-size: 28px; font-weight: 700; paint-order: fill; white-space: pre;" transform="matrix(2.823799, 0, 0, 2.52825, -465.455055, -139.180376)" x="207.312" y="101.836">F ND</text>
+  <text style="white-space: pre; fill: rgb(51, 51, 51); font-family: Arial, sans-serif; font-size: 28px;" x="158.339" y="134.265"> </text>
+  <path style="paint-order: stroke; fill-rule: nonzero; stroke: rgb(0, 0, 0);" d="M 187.457 68.085 L 187.457 85.535 L 187.457 116.643 L 171.374 117.722 L 176.735 91.825 L 169.588 68.085 L 187.457 68.085 Z"/>
+</svg>

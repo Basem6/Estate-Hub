@@ -1,0 +1,32 @@
+@import "tailwindcss";
+.category:hover .word:before{
+    width: 100%;
+}
+.word{
+    position: relative;
+}
+.word::before{
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom:0;
+    transition: 600ms all ;
+    background: white;
+    width: 0%;
+    height: 2px;
+}
+::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+  display: none;
+}
+
+/* Firefox */
+* {
+  scrollbar-width: none;
+}
+
+/* IE & Edge القديم */
+* {
+  -ms-overflow-style: none;
+}
