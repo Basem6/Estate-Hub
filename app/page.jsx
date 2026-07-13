@@ -303,7 +303,7 @@ export default  function Home() {
         <div className="video md:w-352 md:h-260 p-3 md:p-0 w-full max-w-full h-100 mt-3  rounded-md md:mt-8">
             <video
             className="w-full h-full object-cover rounded-md"
-            src="/15272608_3840_2160_30fps.mp4"
+            src="/videos/15272608_3840_2160_30fps.mp4"
             autoPlay
             muted
             loop
