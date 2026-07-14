@@ -1,5 +1,5 @@
 import "./globals.css";
-import { Inter, Poppins } from "next/font/google";
+import { Inter } from "next/font/google";
 import Nav from "../src/components/Nav";
 export const metadata = {
     title: "EstateHub | Find Your Perfect Home",

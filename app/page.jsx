@@ -1,14 +1,14 @@
 "use client";
 import Image from "next/image";
-// import Find from "@/src/assets/FIND.svg"
 import FindText from "@/src/assets/TextToSvgComponent";
 import RealEstate from "@/src/assets/TextToSvgComponent (1)";
-import  Arrowright  from "../src/assets/Chevronright";
 import Cloud from "../src/assets/magnific_aQo6LbnfSh.png"
 import Cloud2 from "../src/assets/pngwing.com.png"
 import manandwomen from "@/src/assets/pexels-pavel-danilyuk-8525713.jpg"
 import Textbg from "../src/assets/Textonbackground"
 import Textbg2 from "../src/assets/Textonbg2"
+
+import About from "@/src/components/About"
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -22,8 +22,6 @@ gsap.registerPlugin(useGSAP,ScrollTrigger,SplitText,DrawSVGPlugin);
 export default  function Home() {
   const homesection = useRef();
   const text = useRef();
-  const overlay = useRef();
-  const card= useRef();
   const bganimate = useRef();
   const bganimate2 = useRef();
   const bighome= useRef();
@@ -31,9 +29,6 @@ export default  function Home() {
   const sectionanimaton = useRef();
   const rightcloud = useRef();
   const bottomcloud = useRef();
-  const para = useRef();
-  const para2 = useRef();
-  const section2 = useRef();
   useGSAP(()=>{
     const mm = gsap.matchMedia();
     const tl= gsap.timeline({
@@ -185,54 +180,9 @@ export default  function Home() {
       })
     });
   },{scope:homesection,dependencies:[]})
-  useGSAP(()=>{
-    
-    const arrows = gsap.utils.toArray(".arr")
-    const parasplit = SplitText.create(para.current,{
-      type:"lines"
-    })
-    const parasplit2 = SplitText.create(para2.current,{
-      type:"lines",
-      mask:"lines"
-    })
-    gsap.from(parasplit.lines,{
-      scrollTrigger:{
-        trigger:para.current,
-        start:"top center",
-
-      },
-      opacity:0,
-      scale:0.7,
-      y:30,
-      stagger:0.1,
-      duration:0.4
-    })
-    gsap.from(parasplit2.lines,{
-      scrollTrigger:{
-        trigger:para2.current,
-        start:"80% bottom",
-      },
-      yPercent:100,
-      stagger:0.1,
-      duration:0.5
-    })
-    gsap.from(arrows,{
-      scrollTrigger:{
-        trigger:arrows,
-        start:"80% bottom",
-      },
-      opacity:0.3,
-      x:7,
-      scale:0.7,
-      stagger:0.11,
-      duration:0.5
-    })
-    
-  },{scope:section2,dependencies:[]})
-  
   return (
     <>
-      <div ref={homesection}  className="flex min-h-screen overflow-x-clip relative  bg-gradient-to-b from-sky-400 via-sky-200 to-blue-100  flex-col flex-1 items-center justify-center  font-sans dark:bg-black">
+      <main ref={homesection}  className="flex min-h-screen overflow-x-clip relative  bg-gradient-to-b from-sky-400 via-sky-200 to-blue-100  flex-col flex-1 items-center justify-center  font-sans dark:bg-black">
           <Image
           ref={bighome}
           src="/magnific_ohM7s2T829.png"
@@ -294,62 +244,8 @@ export default  function Home() {
             className="absolute  w-220 h-100 top-20  -right-60 lg:-right-105  opacity-80 "
           />
         </div>
-      </div>
-
-      <div ref={section2} className="nestedsection  bg-transparent z-50 relative  flex flex-col items-center">
-        <div ref={para} className="paragrag w-full  text-2xl text-center  md:text-4xl md:text-end p-4 mt-20 lg:mt-60">
-            Experience exceptional homes crafted for<br></br> comfort, elegance, and modern living.<br></br> Discover exclusive properties in the most<br></br> desirable neighborhoods.
-        </div>
-        <div className="video md:w-352 md:h-260 p-3 md:p-0 w-full max-w-full h-100 mt-3  rounded-md md:mt-8">
-            <video
-            className="w-full h-full object-cover rounded-md"
-            src="/videos/15272608_3840_2160_30fps.mp4"
-            autoPlay
-            muted
-            loop
-            playsInline
-          />
-        </div>
-        <div ref={para2} className="w-full text-center mt-10 md:mt-30 text-2xl md:text-5xl font-semibold">
-          Find the Perfect Place to Call Home
-        </div>
-        <div className="md:mt-30 mt-10"> 
-          <Arrowright></Arrowright>
-        </div>
-        <div ref={para2}  className="w-full text-center px-3 mt-23 md:mt-30 text-xl lg:px-120 font-serif">
-          Browse carefully selected homes, apartments, and luxury properties in the best locations. Your dream home is only a few clicks away.
-        </div>
-        <div className="min-w-full flex  flex-wrap gap-6 md:gap-0   min-h-130 px-10 mt-50 justify-between">
-          <div className="">
-            <h4 className="text-4xl mb-10">Real Estate,</h4>
-            <button className="group inline-flex items-center gap-2 rounded-full bg-black px-5 py-2 text-sm  text-white transition-colors duration-300 hover:bg-black/80">
-              <span className="relative">Find Properties</span>
-              <ArrowRight
-                size={16}
-                className="transition-transform duration-300 group-hover:translate-x-1"
-              />
-            </button>
-          </div>
-          <div className="md:w-1/2 p-3">
-            <h6 className="mb-9 relative md:right-10">Steps:</h6>
-            <div className="flex gap-9 flex-col">
-              <div className="flex gap-2.5 items-start">
-                <div className="size-4 bg-black opacity-10 rounded-full"></div>
-                <p className="max-w-5/6  md:text-xl relative bottom-1.5"><span>Search Properties. </span><span className="opacity-40">Browse thousands of verified homes and filter by location, price, property type, and amenities.</span></p>
-              </div>
-              <div className="flex gap-2.5 items-start">
-                <div className="size-4 bg-black opacity-10 rounded-full"></div>
-                <p className="max-w-5/6   md:text-xl relative bottom-1.5"><span>Schedule a Visit. </span><span className="opacity-40">Book a property tour at your convenience and explore your favorite listings in person.</span></p>
-              </div>
-
-              <div className="flex gap-2.5 items-start">
-                <div className="size-4 bg-black opacity-10 rounded-full"></div>
-                <p className="max-w-5/6   md:text-xl relative bottom-1.5"><span>Move Forward. </span><span className="opacity-40">Complete the paperwork with confidence and enjoy your new home with ease.</span></p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+      </main>
+      <About></About>
       <section>
       <div className="min-h-screen min-w-full px-10 bg-gray-100 rounded-t-lg py-6">
         <h2 className="text-4xl mb-20 md:mb-6"><span>Dont`t Take </span><span className="opacity-35">Our World For It.</span></h2>
@@ -396,6 +292,7 @@ export default  function Home() {
         </div>
       </div>
       </section>
+
       <section>
       <div className="min-h-screen min-w-full bg-black">
           <div className="flex justify-between flex-wrap p-15">
@@ -501,6 +398,7 @@ export default  function Home() {
           </div>
       </div>
       </section>
+
       <section className="min-h-screen min-w-full ">
         <div className="flex justify-between py-25  mt-10 px-13 flex-wrap gap-2.5 ">
             <p className="text-4xl text-black leading-9 max-w-1/4 w-1/2">Blog<span className="text-gray-400/90"> &<br></br>Resources</span></p>
@@ -517,7 +415,7 @@ export default  function Home() {
         </div>
         <div className="flex gap-7 md:px-14 px-5 flex-col">
             <div className="flex justify-between gap-4  items-center min-w-full min-h-80 flex-wrap-reverse">
-              <div className="text-2xl pr-9 w-200">
+              <div className="text-2xl pr-9  w-180">
                 <h6 className="text-sm mb-15">2026-03-01</h6>
                 <div>
                 Lorem, ipsum dolor sit amet consectetur adipisicing elit. Blanditiis, totam?
@@ -546,7 +444,7 @@ export default  function Home() {
               </div>
             </div>
             <div className="flex justify-between  gap-4  items-center min-w-full min-h-80 flex-wrap-reverse">
-              <div className="text-2xl pr-9 w-200">
+              <div className="text-2xl pr-9 w-180">
                 <h6 className="text-sm mb-15">2026-03-01</h6>
                 <div>
                 Lorem, ipsum dolor sit amet consectetur adipisicing elit. Blanditiis, totam?
@@ -575,7 +473,7 @@ export default  function Home() {
               </div>
             </div>
             <div className="flex justify-between  gap-4  items-center min-w-full min-h-80  flex-wrap-reverse">
-              <div className="text-2xl pr-9 w-200">
+              <div className="text-2xl pr-9  w-180">
                 <h6 className="text-sm mb-15 hidden ">2026-03-01</h6>
                 <div>
                 Lorem, ipsum dolor sit amet consectetur adipisicing elit. Blanditiis, totam?
@@ -605,6 +503,7 @@ export default  function Home() {
             </div>
         </div>
       </section>
+
       <section className="min-h-screen min-w-full relative mt-20 flex justify-center items-center flex-col">
           <Image
                 src="/pexels-peyton-austin-294202047-13251396.jpg"
@@ -623,6 +522,7 @@ export default  function Home() {
                       />
           </button>
       </section>
+
       <section className="min-w-full min-h-screen overflow-hidden relative bg-black p-16 pt-20 flex justify-between">
         <div className="md:w-2/3 w-full">
           <div className="text-gray-100">
