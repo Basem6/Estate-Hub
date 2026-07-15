@@ -33,7 +33,7 @@ return (
 
     <image
         className="bg"
-        href="/magnific_ohM7s2T829.png"
+        href="/magnific_ohM7s2T829.avif"
         x="-400"
         y="-650"
         width="1200"

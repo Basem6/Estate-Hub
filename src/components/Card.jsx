@@ -24,7 +24,6 @@ const animationcard = ()=>{
                     alt="buy"
                     width={1000}
                     height={600}
-                    priority
                     className="w-full h-full absolute left-0 top-0 object-cover opacity-80"
                     />
                 <div className="absolute right-19 text-white  mdtop-14 top-22"><ArrowRight size={90}></ArrowRight></div>

@@ -3,7 +3,7 @@ import Image from "next/image";
 import FindText from "@/src/assets/TextToSvgComponent";
 import RealEstate from "@/src/assets/TextToSvgComponent (1)";
 import Cloud from "../src/assets/magnific_aQo6LbnfSh.png"
-import Cloud2 from "../src/assets/pngwing.com.png"
+import Cloud2 from "../src/assets/pngwing.com.avif"
 import manandwomen from "@/src/assets/pexels-pavel-danilyuk-8525713.jpg"
 import Textbg from "../src/assets/Textonbackground"
 import Textbg2 from "../src/assets/Textonbg2"
@@ -189,7 +189,7 @@ export default  function Home() {
       <main ref={homesection}  className="flex min-h-screen overflow-x-clip relative  bg-gradient-to-b from-sky-400 via-sky-200 to-blue-100  flex-col flex-1 items-center justify-center  font-sans dark:bg-black">
           <Image
           ref={bighome}
-          src="/magnific_ohM7s2T829.png"
+          src="/magnific_ohM7s2T829.avif"
           alt="Hero"
           width={1000}
           height={600}
@@ -200,6 +200,7 @@ export default  function Home() {
             ref={bottomcloud}
             src={Cloud2}
             alt="Clouds"
+            priority
             objectFit="cover"
             className="absolute pointer-events-none z-40  w-full  lg:scale-100 scale-125 md:scale-105 md:-bottom-40   -bottom-13 lg:-bottom-80  "
           />
@@ -237,6 +238,7 @@ export default  function Home() {
             ref={leftcloud}
             src={Cloud}
             alt="Clouds"
+            priority
             objectFit="contain"
             className="relative  w-220 h-100 top-50 -left-50 opacity-90 "
           />
@@ -244,6 +246,7 @@ export default  function Home() {
             ref={rightcloud}
             src={Cloud}
             alt="Clouds"
+            priority
             objectFit="contain"
             className="absolute  w-220 h-100 top-20  -right-60 lg:-right-105  opacity-80 "
           />
@@ -336,7 +339,6 @@ export default  function Home() {
                 objectFit="contain"
                 height={600}
                 width={1000}
-                priority
                 className="object-cover w-full h-full pointer-events-none "
               />
               </div>
@@ -394,7 +396,6 @@ export default  function Home() {
                 objectFit="contain"
                 height={600}
                 width={1000}
-                priority
                 className="object-cover w-full h-full pointer-events-none "
               />
               </div>

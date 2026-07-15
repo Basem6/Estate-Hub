@@ -36,7 +36,7 @@
             </defs>
 
             <image
-            href="/pexels-dico-baskoro-693731013-18070628.jpg"
+            href="/pexels-dico-baskoro-693731013-18070628.avif"
             x="0"
             y="0"
             width="712.01"
@@ -78,7 +78,7 @@
             </defs>
 
             <image
-            href="/pexels-vlad-fonsark-2175898-5374438.jpg"
+            href="/pexels-vlad-fonsark-2175898-5374438.webp"
             x="0"
             y="0"
             width="712.01"

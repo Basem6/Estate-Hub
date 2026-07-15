@@ -70,9 +70,10 @@ return(
             muted
             loop
             playsInline
+            preload="metadata"
         />
         </div>
-        <div ref={para2} className="w-full text-center mt-10 md:mt-30 text-2xl md:text-5xl font-semibold">
+        <div className="w-full text-center mt-10 md:mt-30 text-2xl md:text-5xl font-semibold">
         Find the Perfect Place to Call Home
         </div>
         <div className="md:mt-30 mt-10"> 

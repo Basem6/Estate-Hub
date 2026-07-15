@@ -5,7 +5,7 @@ export default function Footer(){
             <div>
                 <section className="min-h-screen min-w-full relative mt-20 flex justify-center items-center flex-col">
             <Image
-                    src="/pexels-peyton-austin-294202047-13251396.jpg"
+                    src="/pexels-peyton-austin-294202047-13251396.webp"
                     alt="photocard"
                     objectFit="cover"
                     width={1000}
