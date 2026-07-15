@@ -9,6 +9,9 @@ import Textbg from "../src/assets/Textonbackground"
 import Textbg2 from "../src/assets/Textonbg2"
 
 import About from "@/src/components/About"
+import Footer from "@/src/components/Footer"
+import Category from "@/src/components/Category"
+
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -17,7 +20,6 @@ import { DrawSVGPlugin } from "gsap/DrawSVGPlugin";
 import { useRef } from "react";
 import { Star } from "lucide-react";
 import { ArrowRight } from "lucide-react";
-import Card from "@/src/components/Card"
 gsap.registerPlugin(useGSAP,ScrollTrigger,SplitText,DrawSVGPlugin);
 export default  function Home() {
   const homesection = useRef();
@@ -46,7 +48,8 @@ export default  function Home() {
         scrub:3,
         start:"top top",
         end:"+=4600",
-        pin:true
+        pin:true,
+        refreshPriority: 1,
       }
     })
     gsap.to(text.current,{
@@ -179,6 +182,7 @@ export default  function Home() {
         y:-30
       })
     });
+    ScrollTrigger.refresh();
   },{scope:homesection,dependencies:[]})
   return (
     <>
@@ -292,113 +296,7 @@ export default  function Home() {
         </div>
       </div>
       </section>
-
-      <section>
-      <div className="min-h-screen min-w-full bg-black">
-          <div className="flex justify-between flex-wrap p-15">
-            <h5 className="w-1/2 text-white hidden md:block">Serviecs</h5>
-            <h2 className="text-white md:text-4xl text-3xl md:w-1/2">How FIND <br></br><span className="text-gray-400/90">Can Help You</span></h2>
-          </div>
-          <Card  photo={"/pexels-ruby-ruby-20919055-16000743.jpg"}  count={1} wrod={"Buy"} paragrag={"Browse thousands of verified properties using smart filters to find homes that match your budget, location, and lifestyle,Connect with a trusted real estate agent to ask questions, explore the property, and receive expert guidance,Finalize the paperwork, complete the payment securely, and get the keys to your new home."}></Card>
-          <Card  photo={"/pexels-paul-scharf-2152542633-32863801.jpg"}  count={2} wrod={"Sell"} paragrag={"Discover a wide selection of homes for sale, from modern apartments to spacious family houses and luxury villas. Browse verified listings, compare prices, and find the perfect property to call your own."}></Card>
-          <Card  photo={"/pexels-vlad-fonsark-2175898-5374438.jpg"}  count={3} wrod={"Rent"} paragrag={"Find the perfect rental property that fits your lifestyle and budget. Browse verified apartments, houses, and villas with detailed information to make renting simple and stress-free."}></Card>
-          <div className="py-15 px-13">
-            <div className="min-w-full flex justify-start flex-col gap-8 items-start">
-                <p className="text-2xl text-white md:leading-6 md:max-w-1/3">No matter what you're looking for, we're here to help you find the perfect property. Explore our complete collection of verified <span className="text-gray-400/90"> listings and discover a home that matches your lifestyle, needs, and budget.</span></p>
-                <button className="group inline-flex items-center border border-white  gap-2 rounded-full bg-black px-5 py-2 text-sm  text-white transition-colors duration-300 hover:bg-black/80">
-                  <span className="relative bottom-0.5">Browse More Homes</span>
-                  <ArrowRight
-                    size={16}
-                    className="transition-transform duration-300 group-hover:translate-x-1"
-                  />
-              </button>
-            </div>
-          </div>
-          <div className="flex justify-between py-25  mt-10 px-13 flex-wrap gap-2.5 ">
-            
-            <p className="md:text-4xl text-2xl text-white leading-7 w-full max-w-full md:max-w-1/4 md:w-1/2 md:mb-0 mb-4">No matter whatheelore collecti<span className="text-gray-400/90"> listings , and budget.</span></p>
-            <div className="max-w-180">
-              <p className="mb-4 text-white ">Whether you're buying your dream home or searching for the perfect rental, our platform makes <span className="text-gray-400/90"> the journey simple, secure, and enjoyable. Explore more properties and find the one that's right for you.</span></p>
-              <button className="group inline-flex items-center border border-white  gap-2 rounded-full bg-gray-100 px-5 py-2 text-sm  text-black/80 transition-all duration-300 hover:opacity-45">
-                  <span className="relative bottom-0.5">Browse More Homes</span>
-                  <ArrowRight
-                    size={16}
-                    className="transition-transform duration-300 group-hover:translate-x-1"
-                  />
-              </button>
-            </div>
-          </div>
-          <div className="photos flex flex-wrap gap-4 justify-between items-center p-6 md:p-20">
-              <div className="photo size-100 relative grow">
-                  <Image
-                                      src="/pexels-paul-scharf-2152542633-32863801.jpg"
-                                      alt="buy"
-                                      width={1000}
-                                      height={600}
-                                      priority
-                                      className="w-full h-full absolute left-0 top-0 object-cover opacity-80"
-                    />
-                    <div className="absolute bottom-7 left-3">
-                      <button className="group inline-flex items-center border border-gray-400/50  gap-2 rounded-full bg-transparent px-5 py-2 text-sm  text-gray-200 transition-all duration-300 hover:opacity-55">
-                        <span className="relative bottom-0.5">Learn More</span>
-                        <ArrowRight
-                          size={16}
-                          className="transition-transform duration-300 group-hover:translate-x-1"
-                        />
-                      </button>
-                    </div>
-                    <div className="absolute left-7 top-7 text-4xl text-white">
-                    Mortgage<br></br><span className="text-gray-400">Services</span>
-                  </div>
-              </div>
-              <div className="photo size-100 relative grow">
-                  <Image
-                                      src="/pexels-vlad-fonsark-2175898-5374438.jpg"
-                                      alt="buy"
-                                      width={1000}
-                                      height={600}
-                                      priority
-                                      className="w-full h-full absolute left-0 top-0 object-cover opacity-80"
-                    />
-                    <div className="absolute bottom-7 left-3">
-                    <button className="group inline-flex items-center border border-gray-400/50  gap-2 rounded-full bg-transparent px-5 py-2 text-sm  text-gray-200 transition-all duration-300 hover:opacity-55">
-                      <span className="relative bottom-0.5">Learn More</span>
-                      <ArrowRight
-                        size={16}
-                        className="transition-transform duration-300 group-hover:translate-x-1"
-                      />
-                    </button>
-                  </div>
-                  <div className="absolute left-7 top-7 text-4xl text-white">
-                    Mortgage<br></br><span className="text-gray-400">Services</span>
-                  </div>
-              </div>
-              <div className="photo size-100 relative grow">
-                  <Image
-                                      src="/pexels-dico-baskoro-693731013-18070628.jpg"
-                                      alt="buy"
-                                      width={1000}
-                                      height={600}
-                                      priority
-                                      className="w-full h-full absolute left-0 top-0 object-cover opacity-80"
-                    />
-                    <div className="absolute bottom-7 left-3">
-                    <button className="group inline-flex items-center border border-gray-400/50  gap-2 rounded-full bg-transparent px-5 py-2 text-sm  text-gray-200 transition-all duration-300 hover:opacity-55">
-                      <span className="relative bottom-0.5">Learn More</span>
-                      <ArrowRight
-                        size={16}
-                        className="transition-transform duration-300 group-hover:translate-x-1"
-                      />
-                    </button>
-                  </div>
-                  <div className="absolute left-7 top-7 text-4xl text-white">
-                    Mortgage<br></br><span className="text-gray-400">Services</span>
-                  </div>
-              </div>
-          </div>
-      </div>
-      </section>
-
+      <Category></Category>
       <section className="min-h-screen min-w-full ">
         <div className="flex justify-between py-25  mt-10 px-13 flex-wrap gap-2.5 ">
             <p className="text-4xl text-black leading-9 max-w-1/4 w-1/2">Blog<span className="text-gray-400/90"> &<br></br>Resources</span></p>
@@ -503,129 +401,7 @@ export default  function Home() {
             </div>
         </div>
       </section>
-
-      <section className="min-h-screen min-w-full relative mt-20 flex justify-center items-center flex-col">
-          <Image
-                src="/pexels-peyton-austin-294202047-13251396.jpg"
-                alt="photocard"
-                objectFit="cover"
-                width={1000}
-                height={600}
-                className="w-full h-full object-cover absolute left-0 top-0 brightness-30"
-          />
-          <div className="text-white z-100 md:text-4xl px-3 whitespace-nowrap  text-md">Find You. <span className="text-gray-300/90 ">We Will Help You Get There.</span></div>
-          <button className="group inline-flex  items-center mt-3 z-20  gap-2 rounded-full bg-white px-5 py-1.5 md:py-2 text-xs md:text-sm  text-black/80 transition-all duration-300 hover:opacity-55">
-                      <span className="relative md:bottom-0.5">Learn More</span>
-                      <ArrowRight
-                        size={16}
-                        className="transition-transform duration-300 group-hover:translate-x-1"
-                      />
-          </button>
-      </section>
-
-      <section className="min-w-full min-h-screen overflow-hidden relative bg-black p-16 pt-20 flex justify-between">
-        <div className="md:w-2/3 w-full">
-          <div className="text-gray-100">
-            <h4 className="text-2xl min-w-full">Subscribe to our Newsletterf</h4>
-            <div className="relative w-full  h-14">
-            <input type="email" className="w-full absolute left-0 my-5 outline-none placeholder:text-sm placeholder:text-gray-200/50 border-b-gray-400 border-b py-1 pr-7" placeholder="Enter aderess" />
-            <ArrowRight
-                        size={16}
-                        className="transition-transform absolute right-3 bottom-3 duration-300 group-hover:translate-x-1"
-            />
-            </div>
-          </div>
-          <table className="mt-6 w-full border-collapse hidden md:table  ">
-            <thead>
-              <tr className="">
-                <th className="py-3 text-left text-sm font-medium text-gray-300/80">
-                  Head Office
-                </th>
-                <th className="py-3 text-left text-sm font-medium text-gray-300/80">
-                  Email Us
-                </th>
-                <th className="py-3 text-left text-sm font-medium text-gray-300/80">
-                  Call Us
-                </th>
-              </tr>
-            </thead>
-        <tbody>
-          <tr className="">
-            <td className="py-4 text-gray-100 ">
-              A 12 Main Street Omar Makram,<br></br> Cairo, Egypt
-            </td>
-            <td className="py-4 text-gray-100">
-              hello@example.com
-            </td>
-            <td className="py-4 text-gray-100">
-              +20 100 123 4567
-            </td>
-          </tr>
-        </tbody>
-          </table>
-          <div className="md:h-100 h-80 ointer-events-none md:mt-0 mt-10">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="85 0 500 500"
-              className="w-full h-auto scale-125"
-            >
-              <text
-                x="207.312"
-                y="101.836"
-                transform="matrix(4.748763, 0, 0, 4.391594, -859.228467, -274.465122)"
-                style={{
-                  fill: "#fff",
-                  fontFamily: "Arial, sans-serif",
-                  fontSize: 28,
-                  fontWeight: 700,
-                  paintOrder: "fill",
-                  whiteSpace: "pre",
-                }}
-              >
-                F ND
-              </text>
-
-              <path
-                d="M241.725 85.291L241.725 116.468L241.725 172.045L213.136 173.975L222.664 127.707L209.959 85.291Z"
-                fill="white"
-                stroke="white"
-                fillRule="nonzero"
-                style={{ paintOrder: "stroke" }}
-              />
-            </svg>
-          </div>
-        </div> 
-        <div className="w-1/3  justify-between hidden md:flex">
-          <div className="text-white text-xl flex flex-col  gap-1 pl-40">
-            <a href="#"  className="transition-colors duration-300 hover:text-gray-400">Search</a>
-            <a href="#"  className="transition-colors duration-300 hover:text-gray-400">Agents</a>
-            <a href="#"  className="transition-colors duration-300 hover:text-gray-400">Join</a>
-            <a href="#"  className="transition-colors duration-300 hover:text-gray-400">About us</a>
-            <a href="#"  className="transition-colors duration-300 hover:text-gray-400">Agent Portal</a>
-          </div>
-          <div className="text-gray-300/80 text-sm flex flex-col  gap-1 pl-20">
-            <a href="#" className="transition-colors duration-300 hover:text-white">Facebook</a>
-            <a href="#" className="transition-colors duration-300 hover:text-white">Instgram</a>
-            <a href="#" className="transition-colors duration-300 hover:text-white">Youtube</a>
-            <a href="#" className="transition-colors duration-300 hover:text-white">Linkedin</a>
-          </div>
-        </div>
-        <div className="absolute bottom-0 md:left-16 left-4">
-          <div className="text-gray-300/80 text-sm flex  py-2  md:gap-6 gap-6 flex-wrap">
-            <a href="#" className="transition-colors duration-300 hover:text-white">Privacy Policy</a>
-            <a href="#" className="transition-colors duration-300 hover:text-white">Terms of Service</a>
-            <a href="#" className="transition-colors duration-300 hover:text-white">Cookie Policy</a>
-            <a href="#" className="transition-colors duration-300 hover:text-white">Disclaimer</a>
-            <a href="#" className="transition-colors duration-300 hover:text-white">Accessibility</a>
-            <a href="#" className="transition-colors duration-300 hover:text-white">FAQ</a>
-            <a href="#" className="transition-colors duration-300 hover:text-white">Support</a>
-            <a href="#" className="transition-colors duration-300 hover:text-white">Contact Us</a>
-            <a href="#" className="transition-colors duration-300 hover:text-white">Property Listings</a>
-          <a href="#" className="transition-colors duration-300 hover:text-white">Buy a Home</a>
-          <a href="#" className="transition-colors duration-300 hover:text-white">Rent a Property</a>
-          </div>
-        </div>
-      </section>
+      <Footer></Footer>
     </> 
   );
 }

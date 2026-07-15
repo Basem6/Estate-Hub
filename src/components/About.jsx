@@ -15,7 +15,8 @@ const section2 = useRef();
 useGSAP(()=>{
     const arrows = gsap.utils.toArray(".arr")
     const parasplit = SplitText.create(para.current,{
-        type:"lines"
+        type: "lines",
+        linesClass: "line",
     })
     const parasplit2 = SplitText.create(para2.current,{
         type:"lines",
@@ -23,14 +24,12 @@ useGSAP(()=>{
     })
     gsap.from(parasplit.lines,{
         scrollTrigger:{
-        trigger:section2.current,
+        trigger:para.current,
         start:"top center",
         once: true,
-        markers:true
         },
         opacity:0,
         scale:0.7,
-        
         y:30,
         stagger:0.1,
         duration:0.4
@@ -39,6 +38,7 @@ useGSAP(()=>{
         scrollTrigger:{
         trigger:para2.current,
         start:"80% bottom",
+        once: true,
         },
         yPercent:100,
         stagger:0.1,
@@ -48,6 +48,7 @@ useGSAP(()=>{
         scrollTrigger:{
         trigger:arrows,
         start:"80% bottom",
+        once: true,
         },
         opacity:0.3,
         x:7,
@@ -57,8 +58,8 @@ useGSAP(()=>{
     })
 },{scope:section2,dependencies:[]})
 return(
-    <section ref={section2} className="nestedsection bg-amber-300  z-50 relative  flex flex-col items-center">
-        <div ref={para} className="paragrag  outline-red-400 outline-2 w-full  text-2xl text-center  md:text-4xl md:text-end p-4 mt-20 lg:mt-60">
+    <section ref={section2} className="nestedsection   z-50 relative  flex flex-col items-center">
+        <div ref={para} className="paragrag  w-full  text-2xl text-center  md:text-4xl md:text-end p-4 mt-20 lg:mt-60">
             Experience exceptional homes crafted for<br></br> comfort, elegance, and modern living.<br></br> Discover exclusive properties in the most<br></br> desirable neighborhoods.
         </div>
         <div className="video md:w-352 md:h-260 p-3 md:p-0 w-full max-w-full h-100 mt-3  rounded-md md:mt-8">
