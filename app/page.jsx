@@ -218,10 +218,10 @@ export default  function Home() {
         </div>
         </div>
         <main ref={text} className="flex  flex-col items-center justify-center  flex-1 text-center  relative  md:bottom-35 bottom-14">
-        <h1 className="text-4xl md:text-5xl lg:text-8xl font-bold mb-4 text-gray-900 dark:text-white ">
+        <h1 className="text-4xl md:text-5xl lg:text-8xl font-bold mb-4 text-gray-900 ">
           Find What Moves You
         </h1>
-        <p className="md:text-lg max-w-2/3 md:max-w-full mb-3 text-gray-900/90 dark:text-gray-300">
+        <p className="md:text-lg max-w-2/3 md:max-w-full mb-3 text-gray-900/90">
           Expert agents. Real guidance. A clear path to find what's next
         </p>
         <button className="group inline-flex items-center gap-2 rounded-full bg-black px-5 py-2 text-sm  text-white transition-colors duration-300 hover:bg-black/80">
