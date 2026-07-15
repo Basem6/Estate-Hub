@@ -70,7 +70,6 @@ return(
             muted
             loop
             playsInline
-            preload="metadata"
         />
         </div>
         <div className="w-full text-center mt-10 md:mt-30 text-2xl md:text-5xl font-semibold">

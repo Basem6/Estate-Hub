@@ -4,7 +4,6 @@ import { ChevronDown } from "lucide-react";
 import { usePathname } from 'next/navigation'
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useRef } from "react";
 export default function Nav() {
 const nav=useRef()
