@@ -41,12 +41,13 @@ useGSAP(()=>{
         },
         duration:0.6,
     })
-    // tl.from(arrows,{
-    //     opacity:0.3,
-    //     x:7,
-    //     scale:0.7,
-    //     stagger:0.12
-    // },0)
+
+    tl.from(arrows,{
+        opacity:0.3,
+        x:7,
+        scale:0.7,
+        stagger:0.1
+    },0)
     tl.from(parasplit2.lines,{
         yPercent:100,
         stagger:0.08
