@@ -27,7 +27,7 @@ export default function ArrowRight() {
             xmlns="http://www.w3.org/2000/svg"
         >
             <defs>
-            <clipPath id="arrowClip">
+            <clipPath id="arrowClip2">
                 <path d="M505.754 240.923L271.088 6.256C267.099 2.245 261.68 0.005 256.005 0.005H21.338C12.719 0.005 4.911 5.189 1.626 13.168C-1.681 21.147 0.154 30.32 6.255 36.421L225.839 256.005L6.256 475.59C0.155 481.691-1.68 490.865 1.627 498.843C4.912 506.822 12.72 512.006 21.339 512.006H256.006C261.681 512.006 267.099 509.766 271.089 505.755L505.756 271.088C514.096 262.747 514.096 249.264 505.754 240.923Z" />
             </clipPath>
             </defs>
@@ -39,7 +39,7 @@ export default function ArrowRight() {
             width="712.01"
             height="100%"
             preserveAspectRatio="xMidYMid slice"
-            clipPath="url(#arrowClip)"
+            clipPath="url(#arrowClip2)"
             />
         </svg>
         <svg
@@ -48,7 +48,7 @@ export default function ArrowRight() {
             xmlns="http://www.w3.org/2000/svg"
         >
             <defs>
-            <clipPath id="arrowClip">
+            <clipPath id="arrowClip3">
                 <path d="M505.754 240.923L271.088 6.256C267.099 2.245 261.68 0.005 256.005 0.005H21.338C12.719 0.005 4.911 5.189 1.626 13.168C-1.681 21.147 0.154 30.32 6.255 36.421L225.839 256.005L6.256 475.59C0.155 481.691-1.68 490.865 1.627 498.843C4.912 506.822 12.72 512.006 21.339 512.006H256.006C261.681 512.006 267.099 509.766 271.089 505.755L505.756 271.088C514.096 262.747 514.096 249.264 505.754 240.923Z" />
             </clipPath>
             </defs>
@@ -60,7 +60,7 @@ export default function ArrowRight() {
             width="712.01"
             height="100%"
             preserveAspectRatio="xMidYMid slice"
-            clipPath="url(#arrowClip)"
+            clipPath="url(#arrowClip3)"
             />
         </svg>
         <svg
@@ -69,7 +69,7 @@ export default function ArrowRight() {
             xmlns="http://www.w3.org/2000/svg"
         >
             <defs>
-            <clipPath id="arrowClip">
+            <clipPath id="arrowClip4">
                 <path d="M505.754 240.923L271.088 6.256C267.099 2.245 261.68 0.005 256.005 0.005H21.338C12.719 0.005 4.911 5.189 1.626 13.168C-1.681 21.147 0.154 30.32 6.255 36.421L225.839 256.005L6.256 475.59C0.155 481.691-1.68 490.865 1.627 498.843C4.912 506.822 12.72 512.006 21.339 512.006H256.006C261.681 512.006 267.099 509.766 271.089 505.755L505.756 271.088C514.096 262.747 514.096 249.264 505.754 240.923Z" />
             </clipPath>
             </defs>
@@ -81,7 +81,7 @@ export default function ArrowRight() {
             width="712.01"
             height="100%"
             preserveAspectRatio="xMidYMid slice"
-            clipPath="url(#arrowClip)"
+            clipPath="url(#arrowClip4)"
             />
         </svg>
         </div>

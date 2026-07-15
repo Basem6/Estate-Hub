@@ -29,7 +29,7 @@ const animationcard = ()=>{
                 <div className="absolute right-19 text-white  mdtop-14 top-22"><ArrowRight size={90}></ArrowRight></div>
                     </div>
                     <div ref={overlay} className="absolute top-0 left-0 min-w-full min-h-full bg-black"></div>
-                    <div className="w-full  z-10 flex justify-between px-7 border-t-gray-300 border pt-4">
+                    <div className="w-full  z-10 flex justify-between px-7 border-t-gray-300 border-l-transparent border-r-transparent border pt-4">
                     <div className="flex gap-3.5 w-1/2 text-white  ">
                         <div className="size-6 rounded-full border border-white flex justify-center items-center text-xs"> <span className="relative text-center">{count}</span></div>
                         <div className="md:max-w-2/4 hidden md:block md:text-sm">{paragrag}</div>
@@ -39,6 +39,6 @@ const animationcard = ()=>{
                     <span className="word">{wrod}</span>
                     </h2>
                     </div>
-                </div>
+            </div>
         )
 }

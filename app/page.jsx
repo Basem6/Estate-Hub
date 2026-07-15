@@ -245,11 +245,10 @@ export default  function Home() {
             src={Cloud}
             alt="Clouds"
             priority
-            objectFit="contain"
             onLoad={() => {
               ScrollTrigger.refresh();
             }}
-            className="relative  w-220 h-100 top-50 -left-50 opacity-90 "
+            className="relative  w-220 h-100 top-50 -left-50 opacity-90 object-contain"
           />
           <Image
             ref={rightcloud}
@@ -274,7 +273,6 @@ export default  function Home() {
               <Image
                 src={manandwomen}
                 alt="photocard"
-                objectFit="contain"
                 className="w-full h-full object-contain"
               />
             </div>
@@ -348,7 +346,6 @@ export default  function Home() {
                 <Image
                 src="/pexels-ruby-ruby-20919055-16000743.jpg"
                 alt="informatino"
-                objectFit="contain"
                 height={600}
                 width={1000}
                 className="object-cover w-full h-full pointer-events-none "
@@ -376,7 +373,6 @@ export default  function Home() {
                 <Image
                 src="/pexels-vlad-fonsark-2175898-5374438.webp"
                 alt="informatino"
-                objectFit="contain"
                 height={600}
                 width={1000}
                 priority
@@ -405,7 +401,6 @@ export default  function Home() {
                 <Image
                 src="/pexels-paul-scharf-2152542633-32863801.jpg"
                 alt="informatino"
-                objectFit="contain"
                 height={600}
                 width={1000}
                 className="object-cover w-full h-full pointer-events-none "

@@ -16,7 +16,6 @@ useGSAP(()=>{
     const arrows = gsap.utils.toArray(".arr")
     const parasplit = SplitText.create(para.current,{
         type: "lines",
-        linesClass: "line",
     })
     const parasplit2 = SplitText.create(para2.current,{
         type:"lines",
@@ -37,25 +36,27 @@ useGSAP(()=>{
     const tl = gsap.timeline({
         scrollTrigger:{
         trigger:para2.current,
-        start:"80% bottom",
+        start:"70% bottom",
         once: true,
         },
         duration:0.6,
-        stagger:0.1
-    })
-    tl.from(parasplit2.lines,{
-        yPercent:100,
     })
     tl.from(arrows,{
         opacity:0.3,
         x:7,
         scale:0.7,
-    },"<")
+        stagger:0.12
+    },0)
+    tl.from(parasplit2.lines,{
+        yPercent:100,
+        stagger:0.08
+    })
     return ()=>{
         parasplit.revert();
         parasplit2.revert();
     }
 },{scope:section2,dependencies:[]})
+
 return(
     <section ref={section2} className="nestedsection   z-50 relative  flex flex-col items-center">
         <div ref={para} className="paragrag  w-full  text-2xl text-center  md:text-4xl md:text-end p-4 mt-20 lg:mt-60">
