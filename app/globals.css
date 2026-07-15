@@ -1,19 +1,19 @@
 @import "tailwindcss";
-.category:hover .word:before{
-    width: 100%;
+.category:hover .word:before {
+  width: 100%;
 }
-.word{
-    position: relative;
+.word {
+  position: relative;
 }
-.word::before{
-    content: '';
-    position: absolute;
-    left: 0;
-    bottom:0;
-    transition: 600ms all ;
-    background: white;
-    width: 0%;
-    height: 2px;
+.word::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  transition: 600ms all;
+  background: white;
+  width: 0%;
+  height: 2px;
 }
 
 /* ::-webkit-scrollbar {
@@ -27,3 +27,14 @@
 * {
   -ms-overflow-style: none;
 } */
+.arrow-item {
+  overflow: hidden;
+  clip-path: url(#arrowMask);
+  -webkit-clip-path: url(#arrowMask);
+  contain: paint;
+}
+
+.arrow-image {
+  object-fit: cover;
+  object-position: center;
+}

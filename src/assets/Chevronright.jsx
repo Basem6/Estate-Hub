@@ -1,90 +1,45 @@
+"use client";
+import Image from "next/image";
+
+const arrowImages = [
+"/pexels-paul-scharf-2152542633-32863801.jpg",
+"/pexels-dico-baskoro-693731013-18070628.avif",
+"/pexels-ruby-ruby-20919055-16000743.jpg",
+"/pexels-vlad-fonsark-2175898-5374438.webp",
+];
+
+const ARROW_CLIP_PATH =
+"M0.987781 0.470544L0.529458 0.012219C0.521668 0.004385 0.511084 0.000010 0.500000 0.000010H0.041675C0.024841 0.000010 0.009592 0.010135 0.003176 0.025718C-0.003283 0.041302 0.000301 0.059218 0.012217 0.071133L0.441083 0.500000L0.012219 0.928869C0.000303 0.940784-0.003281 0.958702 0.003178 0.974284C0.009594 0.989867 0.024843 0.999992 0.041677 0.999992H0.500002C0.511086 0.999992 0.521668 0.995617 0.529460 0.987783L0.987785 0.529458C1.004074 0.513168 1.004074 0.486834 0.987781 0.470544Z";
 
 export default function ArrowRight() {
-    return (
-        <div className="flex ">
-        <svg
-            className="md:size-70 size-20 arr"
-            viewBox="0 0 512.01 512.01"
-            xmlns="http://www.w3.org/2000/svg"
-        >
-            <defs>
-            <clipPath id="arrowClip">
-                <path d="M505.754 240.923L271.088 6.256C267.099 2.245 261.68 0.005 256.005 0.005H21.338C12.719 0.005 4.911 5.189 1.626 13.168C-1.681 21.147 0.154 30.32 6.255 36.421L225.839 256.005L6.256 475.59C0.155 481.691-1.68 490.865 1.627 498.843C4.912 506.822 12.72 512.006 21.339 512.006H256.006C261.681 512.006 267.099 509.766 271.089 505.755L505.756 271.088C514.096 262.747 514.096 249.264 505.754 240.923Z" />
-            </clipPath>
-            </defs>
-            <image
-            href="/pexels-paul-scharf-2152542633-32863801.jpg"
-            x="0"
-            y="0"
-            width="712.01"
-            height="100%"
-            preserveAspectRatio="xMidYMid slice"
-            clipPath="url(#arrowClip)"
-            />
-        </svg>
-        <svg
-            className="md:size-70 size-20 arr"
-            viewBox="0 0 512.01 512.01"
-            xmlns="http://www.w3.org/2000/svg"
-        >
-            <defs>
-            <clipPath id="arrowClip2">
-                <path d="M505.754 240.923L271.088 6.256C267.099 2.245 261.68 0.005 256.005 0.005H21.338C12.719 0.005 4.911 5.189 1.626 13.168C-1.681 21.147 0.154 30.32 6.255 36.421L225.839 256.005L6.256 475.59C0.155 481.691-1.68 490.865 1.627 498.843C4.912 506.822 12.72 512.006 21.339 512.006H256.006C261.681 512.006 267.099 509.766 271.089 505.755L505.756 271.088C514.096 262.747 514.096 249.264 505.754 240.923Z" />
-            </clipPath>
-            </defs>
+return (
+    <>
+    <svg
+        aria-hidden="true"
+        focusable="false"
+        className="pointer-events-none absolute w-0 h-0 overflow-hidden"
+    >
+        <defs>
+        <clipPath id="arrowMask" clipPathUnits="objectBoundingBox">
+            <path d={ARROW_CLIP_PATH} />
+        </clipPath>
+        </defs>
+    </svg>
 
-            <image
-            href="/pexels-dico-baskoro-693731013-18070628.avif"
-            x="0"
-            y="0"
-            width="712.01"
-            height="100%"
-            preserveAspectRatio="xMidYMid slice"
-            clipPath="url(#arrowClip2)"
+    <div className="flex flex-wrap gap-4">
+        {arrowImages.map((src, index) => (
+        <div key={`${index}-${src}`} className="md:size-70 size-20 arr arrow-item relative overflow-hidden">
+            <Image
+            src={src}
+            alt="Arrow background"
+            fill
+            sizes="(max-width: 768px) 8rem, 18rem"
+            className="arrow-image"
+            priority={index === 0}
             />
-        </svg>
-        <svg
-            className="md:size-70 size-20 arr"
-            viewBox="0 0 512.01 512.01"
-            xmlns="http://www.w3.org/2000/svg"
-        >
-            <defs>
-            <clipPath id="arrowClip3">
-                <path d="M505.754 240.923L271.088 6.256C267.099 2.245 261.68 0.005 256.005 0.005H21.338C12.719 0.005 4.911 5.189 1.626 13.168C-1.681 21.147 0.154 30.32 6.255 36.421L225.839 256.005L6.256 475.59C0.155 481.691-1.68 490.865 1.627 498.843C4.912 506.822 12.72 512.006 21.339 512.006H256.006C261.681 512.006 267.099 509.766 271.089 505.755L505.756 271.088C514.096 262.747 514.096 249.264 505.754 240.923Z" />
-            </clipPath>
-            </defs>
-
-            <image
-            href="/pexels-ruby-ruby-20919055-16000743.jpg"
-            x="0"
-            y="0"
-            width="712.01"
-            height="100%"
-            preserveAspectRatio="xMidYMid slice"
-            clipPath="url(#arrowClip3)"
-            />
-        </svg>
-        <svg
-            className="md:size-70 size-20 arr"
-            viewBox="0 0 512.01 512.01"
-            xmlns="http://www.w3.org/2000/svg"
-        >
-            <defs>
-            <clipPath id="arrowClip4">
-                <path d="M505.754 240.923L271.088 6.256C267.099 2.245 261.68 0.005 256.005 0.005H21.338C12.719 0.005 4.911 5.189 1.626 13.168C-1.681 21.147 0.154 30.32 6.255 36.421L225.839 256.005L6.256 475.59C0.155 481.691-1.68 490.865 1.627 498.843C4.912 506.822 12.72 512.006 21.339 512.006H256.006C261.681 512.006 267.099 509.766 271.089 505.755L505.756 271.088C514.096 262.747 514.096 249.264 505.754 240.923Z" />
-            </clipPath>
-            </defs>
-
-            <image
-            href="/pexels-vlad-fonsark-2175898-5374438.webp"
-            x="0"
-            y="0"
-            width="712.01"
-            height="100%"
-            preserveAspectRatio="xMidYMid slice"
-            clipPath="url(#arrowClip4)"
-            />
-        </svg>
         </div>
-    );
-    }
+        ))}
+    </div>
+    </>
+);
+}
