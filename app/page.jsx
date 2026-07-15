@@ -186,7 +186,7 @@ export default  function Home() {
   },{scope:homesection,dependencies:[]})
   return (
     <>
-      <main ref={homesection}  className="flex min-h-screen overflow-x-clip relative  bg-gradient-to-b from-sky-400 via-sky-200 to-blue-100  flex-col flex-1 items-center justify-center  font-sans dark:bg-black">
+      <main ref={homesection}  className="flex min-h-screen overflow-x-clip relative  bg-linear-to-b from-sky-400 via-sky-200 to-blue-100  flex-col flex-1 items-center justify-center  font-sans dark:bg-black">
           <Image
           ref={bighome}
           src="/magnific_ohM7s2T829.avif"
@@ -223,7 +223,7 @@ export default  function Home() {
           Find What Moves You
         </h1>
         <p className="md:text-lg max-w-2/3 md:max-w-full mb-3 text-gray-900/90">
-          Expert agents. Real guidance. A clear path to find what's next
+          Expert agents. Real guidance. A clear path to find what&apos;s next
         </p>
         <button className="group inline-flex items-center gap-2 rounded-full bg-black px-5 py-2 text-sm  text-white transition-colors duration-300 hover:bg-black/80">
           <span className="relative bottom-0.5">Find Properties</span>
@@ -274,9 +274,9 @@ export default  function Home() {
                 <span className="text-sm text-neutral-400 font-sans">June 1, 2026</span>
               </div>
               <p className=" text-neutral-900 mb-6">
-                " Lorem ipsum dolor sit amet,<span className="text-blue-900"> consectetur adipiscing elit. Vivamus</span>
+                &ldquo;Lorem ipsum dolor sit amet,<span className="text-blue-900"> consectetur adipiscing elit. Vivamus</span>
                 lacinia odio vitae <span className="text-red-900">vestibulum. Donec in efficitur ipsum</span>, sed dapibus
-                eros. "
+                eros.  &ldquo;
               </p>
               <div className="mb-4 flex items-start justify-between">
                 <div className="flex gap-1">
@@ -304,7 +304,7 @@ export default  function Home() {
         <div className="flex justify-between py-25  mt-10 px-13 flex-wrap gap-2.5 ">
             <p className="text-4xl text-black leading-9 max-w-1/4 w-1/2">Blog<span className="text-gray-400/90"> &<br></br>Resources</span></p>
             <div className="max-w-180">
-              <p className="mb-4 text-black ">Whether you're buying your dream home or searching for the perfect rental, our platform makes <span className="text-gray-400/90"> the journey simple, secure, and enjoyable. Explore more properties and find the one that's right for you.</span></p>
+              <p className="mb-4 text-black ">Whether you&apos;re buying your dream home or searching for the perfect rental, our platform makes <span className="text-gray-400/90"> the journey simple, secure, and enjoyable. Explore more properties and find the one that&apos;s right for you.</span></p>
               <button className="group inline-flex items-center border  gap-2 rounded-full bg-black px-5 py-2 text-sm  text-gray-100 transition-all duration-300 hover:opacity-45">
                   <span className="relative bottom-0.5">Browse More Homes</span>
                   <ArrowRight
@@ -362,7 +362,7 @@ export default  function Home() {
               </div>
               <div className="w-150 h-80">
                 <Image
-                src="/pexels-vlad-fonsark-2175898-5374438.jpg"
+                src="/pexels-vlad-fonsark-2175898-5374438.webp"
                 alt="informatino"
                 objectFit="contain"
                 height={600}
