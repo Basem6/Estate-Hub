@@ -75,9 +75,7 @@ return(
         <div className="w-full text-center mt-10 md:mt-30 text-2xl md:text-5xl font-semibold">
         Find the Perfect Place to Call Home
         </div>
-        <div className="md:mt-30 mt-10"> 
-        <Arrowright></Arrowright>
-        </div>
+        
         <div ref={para2}  className="w-full text-center px-3 mt-23 md:mt-30 text-xl lg:px-120 font-serif">
         Browse carefully selected homes, apartments, and luxury properties in the best locations. Your dream home is only a few clicks away.
         </div>
