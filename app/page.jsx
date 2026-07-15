@@ -33,6 +33,7 @@ export default  function Home() {
   const bottomcloud = useRef();
   useGSAP(()=>{
     const mm = gsap.matchMedia();
+    mm.add("(min-width: 768px)", () => {
     const tl= gsap.timeline({
       scrollTrigger:{
         trigger:sectionanimaton.current,
@@ -63,7 +64,7 @@ export default  function Home() {
       opacity:0,
       y:10,
     })
-    mm.add("(min-width: 768px)", () => {
+    
     gsap.to(bighome.current,{
       scrollTrigger:{
         trigger:sectionanimaton.current,
@@ -74,19 +75,18 @@ export default  function Home() {
       scale:1.2,
       y:-155
     })
-    })
-    mm.add("(max-width: 768px)", () => {
-    gsap.to(bighome.current,{
-      scrollTrigger:{
-        trigger:sectionanimaton.current,
-        scrub:3,
-        start:"top top",
-        end:"+=1000",
-      },
-      scale:1.7,
-      y:-170
-    })
-    })
+    // mm.add("(max-width: 768px)", () => {
+    // gsap.to(bighome.current,{
+    //   scrollTrigger:{
+    //     trigger:sectionanimaton.current,
+    //     scrub:3,
+    //     start:"top top",
+    //     end:"+=1000",
+    //   },
+    //   scale:1.7,
+    //   y:-170
+    // })
+    // })
     tl.to(".rr", {
       scrollTrigger:{
         trigger:sectionanimaton.current,
@@ -182,6 +182,7 @@ export default  function Home() {
         y:-30
       })
     });
+    })
     ScrollTrigger.refresh();
   },{scope:homesection,dependencies:[]})
   return (
@@ -211,10 +212,10 @@ export default  function Home() {
             className="absolute pointer-events-none z-40  w-full  lg:scale-100 scale-125 md:scale-105 md:-bottom-40   -bottom-13 lg:-bottom-80  "
           />
         <div className="min-w-full min-h-screen flex justify-center items-center absolute left-0 top-0">
-        <div className="flex flex-col gap-16  justify-center items-center text-center z-20 pointer-events-none relative rr opacity-0 ">
+        <div className="lg:flex flex-col gap-16 hidden  justify-center items-center text-center z-20 pointer-events-none relative rr opacity-0 ">
           <RealEstate></RealEstate>
           <FindText ></FindText>
-          <div className="absolute left-0 w-full h-full top-0 flex flex-col gap-16  justify-center items-center text-center z-20 pointer-events-none rr opacity-0 ">
+          <div className="absolute left-0 w-full h-full top-0  flex-col gap-16  justify-center items-center text-center z-20 pointer-events-none rr hidden lg:flex opacity-0 ">
             <div ref={bganimate} className=" opacity-0   -z-20">
             <Textbg></Textbg>
             </div>

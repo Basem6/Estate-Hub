@@ -28,10 +28,10 @@ useGSAP(()=>{
         once: true,
         },
         opacity:0,
-        scale:0.7,
+        scale:0.8,
         y:30,
-        stagger:0.1,
-        duration:0.4
+        stagger:0.08,
+        duration:0.3
     })
     const tl = gsap.timeline({
         scrollTrigger:{
