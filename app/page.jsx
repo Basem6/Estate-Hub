@@ -194,6 +194,9 @@ export default  function Home() {
           width={1000}
           height={600}
           priority
+          onLoad={() => {
+          ScrollTrigger.refresh();
+        }}
           className="object-contain lg:scale-100 scale-125 md:scale-105 md:-bottom-40   -bottom-20 lg:-bottom-110 absolute pointer-events-none z-10"
         />
         <Image
@@ -201,6 +204,9 @@ export default  function Home() {
             src={Cloud2}
             alt="Clouds"
             priority
+            onLoad={() => {
+            ScrollTrigger.refresh();
+          }}
             objectFit="cover"
             className="absolute pointer-events-none z-40  w-full  lg:scale-100 scale-125 md:scale-105 md:-bottom-40   -bottom-13 lg:-bottom-80  "
           />
@@ -240,6 +246,9 @@ export default  function Home() {
             alt="Clouds"
             priority
             objectFit="contain"
+            onLoad={() => {
+              ScrollTrigger.refresh();
+            }}
             className="relative  w-220 h-100 top-50 -left-50 opacity-90 "
           />
           <Image
@@ -247,6 +256,9 @@ export default  function Home() {
             src={Cloud}
             alt="Clouds"
             priority
+            onLoad={() => {
+              ScrollTrigger.refresh();
+            }}
             objectFit="contain"
             className="absolute  w-220 h-100 top-20  -right-60 lg:-right-105  opacity-80 "
           />

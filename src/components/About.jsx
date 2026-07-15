@@ -34,28 +34,27 @@ useGSAP(()=>{
         stagger:0.1,
         duration:0.4
     })
-    gsap.from(parasplit2.lines,{
+    const tl = gsap.timeline({
         scrollTrigger:{
         trigger:para2.current,
         start:"80% bottom",
         once: true,
         },
-        yPercent:100,
-        stagger:0.1,
-        duration:0.5
+        duration:0.6,
+        stagger:0.1
     })
-    gsap.from(arrows,{
-        scrollTrigger:{
-        trigger:arrows,
-        start:"80% bottom",
-        once: true,
-        },
+    tl.from(parasplit2.lines,{
+        yPercent:100,
+    })
+    tl.from(arrows,{
         opacity:0.3,
         x:7,
         scale:0.7,
-        stagger:0.11,
-        duration:0.5
-    })
+    },"<")
+    return ()=>{
+        parasplit.revert();
+        parasplit2.revert();
+    }
 },{scope:section2,dependencies:[]})
 return(
     <section ref={section2} className="nestedsection   z-50 relative  flex flex-col items-center">
