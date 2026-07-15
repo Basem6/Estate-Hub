@@ -28,12 +28,12 @@ return (
 
     <div className="flex flex-wrap gap-4">
         {arrowImages.map((src, index) => (
-        <div key={`${index}-${src}`} className="md:size-70 size-20 arr arrow-item relative overflow-hidden">
+        <div key={`${index}-${src}`} className="md:size-70 size-15 arr arrow-item relative overflow-hidden">
             <Image
             src={src}
             alt="Arrow background"
             fill
-            sizes="(max-width: 768px) 8rem, 18rem"
+            sizes="(max-width: 768px) 7rem, 18rem"
             className="arrow-image"
             priority={index === 0}
             />
