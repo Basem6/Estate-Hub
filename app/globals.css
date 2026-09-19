@@ -1,4 +1,18 @@
 @import "tailwindcss";
+::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+  display: none;
+}
+* {
+  scrollbar-width: none;
+}
+* {
+  -ms-overflow-style: none;
+}
+*{
+  user-select: none;
+}
 .category:hover .word:before {
   width: 100%;
 }
@@ -16,17 +30,6 @@
   height: 2px;
 }
 
-/* ::-webkit-scrollbar {
-  width: 0;
-  height: 0;
-  display: none;
-}
-* {
-  scrollbar-width: none;
-}
-* {
-  -ms-overflow-style: none;
-} */
 .arrow-item {
   overflow: hidden;
   clip-path: url(#arrowMask);
@@ -38,3 +41,4 @@
   object-fit: cover;
   object-position: center;
 }
+

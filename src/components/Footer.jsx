@@ -5,11 +5,12 @@ export default function Footer(){
             <div>
                 <section className="min-h-screen min-w-full relative mt-20 flex justify-center items-center flex-col">
             <Image
-                    src="/pexels-peyton-austin-294202047-13251396.webp"
+                    src="/images/pexels-asaf-38779407.jpg"
                     alt="photocard"
                     objectFit="cover"
-                    width={1000}
+                    width={1900}
                     height={600}
+                    loading="lazy"
                     className="w-full h-full object-cover absolute left-0 top-0 brightness-30"
             />
             <div className="text-white z-100 md:text-4xl px-3 whitespace-nowrap  text-md">Find You. <span className="text-gray-300/90 ">We Will Help You Get There.</span></div>

@@ -1,13 +1,10 @@
 "use client";
-import  Arrowright  from "@/src/assets/Chevronright";
+import dynamic from "next/dynamic";
+const Arrowright = dynamic(() => import("@/src/assets/Chevronright"));
 import { ArrowRight } from "lucide-react";
 import { useRef } from "react";
 //gsap
-import { useGSAP } from "@gsap/react";
-import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { SplitText } from "gsap/SplitText";
-gsap.registerPlugin(useGSAP,ScrollTrigger,SplitText);
+import { useGSAP , gsap  , SplitText } from "../lib/gsap";
 export default function About(){
 const para = useRef();
 const para2 = useRef();
@@ -59,14 +56,18 @@ useGSAP(()=>{
 },{scope:section2,dependencies:[]})
 
 return(
-    <section ref={section2} className="nestedsection   z-50 relative  flex flex-col items-center">
-        <div ref={para} className="paragrag  w-full  text-2xl text-center  md:text-4xl md:text-end p-4 mt-20 lg:mt-60">
+    <section ref={section2} className="relative  overflow-x-clip  z-50  flex flex-col items-center">
+        <div className="absolute min-w-full min-h-full  z-50">
+            
+
+        </div>
+        <div ref={para} className="paragrag  w-full  text-2xl text-center md:text-4xl md:text-end p-4 md:mt-0 mt-10   z-50">
             Experience exceptional homes crafted for<br></br> comfort, elegance, and modern living.<br></br> Discover exclusive properties in the most<br></br> desirable neighborhoods.
         </div>
-        <div className="video md:w-352 md:h-260 p-3 md:p-0 w-full max-w-full h-100 mt-3  rounded-md md:mt-8">
+        <div className="video md:w-352 md:h-260 p-3 md:p-0 w-full max-w-full h-100 mt-10  rounded-md md:mt-20">
             <video
             className="w-full h-full object-cover rounded-md"
-            src="https://res.cloudinary.com/dhmk6ap4o/video/upload/v1784033373/15272608_3840_2160_30fps_wlgnhs.mp4"
+            src="https://res.cloudinary.com/dhmk6ap4o/video/upload/w_960,q_auto,f_auto/v1784033373/15272608_3840_2160_30fps_wlgnhs.mp4"
             autoPlay
             muted
             loop

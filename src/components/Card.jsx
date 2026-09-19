@@ -1,6 +1,7 @@
+"use client"
 import Image from "next/image";
 import { ArrowRight } from "lucide-react";
-import gsap from "gsap";
+import {gsap} from "../lib/gsap";
 import { useRef } from "react";
 export default function Card({photo,wrod,paragrag,count}){
 const overlay=useRef()

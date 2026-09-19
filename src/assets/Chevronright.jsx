@@ -2,10 +2,10 @@
 import Image from "next/image";
 
 const arrowImages = [
-"/pexels-paul-scharf-2152542633-32863801.jpg",
-"/pexels-dico-baskoro-693731013-18070628.avif",
-"/pexels-ruby-ruby-20919055-16000743.jpg",
-"/pexels-vlad-fonsark-2175898-5374438.webp",
+"/images/pexels-necon-15987761.jpg",
+"/images/pexels-smail-dahmani-2278818-27268863.jpg",
+"/images/pexels-nguyendesigner-13600518.jpg",
+"/images/pexels-willianjusten-33261394.jpg",
 ];
 
 const ARROW_CLIP_PATH =

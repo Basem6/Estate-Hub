@@ -1,9 +1,8 @@
 "use client";
 import Link from "next/link";
-import { ChevronDown } from "lucide-react";
+import { ChevronDown  , TextAlignEnd} from "lucide-react";
 import { usePathname } from 'next/navigation'
-import { useGSAP } from "@gsap/react";
-import gsap from "gsap";
+import { useGSAP , gsap} from "../lib/gsap"
 import { useRef } from "react";
 export default function Nav() {
 const nav=useRef()
@@ -27,11 +26,11 @@ const links = [
 return (
     <div ref={nav} className="fixed min-w-full min-h-10  z-50">
                 <div className="w-full h-full flex justify-between items-center px-4 md:px-22 md:py-2 py-6">
-                    <div className="pointer-events-none relative w-37 min-h-10">
+                    <div className="pointer-events-none relative md:right-0 right-7  min-w-37 min-h-10">
                         <svg
                             xmlns="http://www.w3.org/2000/svg"
                             viewBox="0 0 500 500"
-                            className="absolute top-0 scale-125"
+                            className="absolute left-0 top-0 scale-125"
                             >
                             <text
                                 x="207.312"
@@ -84,6 +83,9 @@ return (
                         </div> 
                     </nav>
                     <div>
+                        <button className="md:hidden">
+                        <TextAlignEnd/>
+                        </button>
                         <button className="group hidden md:inline-flex items-center gap-2 rounded-full bg-black px-4.5 py-2.5 text-sm  text-gray-100 transition-colors duration-300 hover:bg-black/80">
                             <span>Sign In</span>
                         </button>
