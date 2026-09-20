@@ -2,17 +2,18 @@
 import { useRef } from "react";
 import Image from "next/image";
 import { MoveRight } from "lucide-react";
-
+import Overlay from "../assets/photos/8ef761d302445d24bbb9db1cd19a4857.png"
 import FindText from "@/src/assets/TextToSvgComponent";
 import RealEstate from "@/src/assets/TextToSvgComponent (1)";
 import Textbg from "@/src/assets/Textonbackground";
 import Textbg2 from "@/src/assets/Textonbg2";
 
 import MainPhoto from "@/src/assets/photos/magnific_ohM7s2T829.webp";
+import rightcloude from "@/src/assets/photos/7d59032b42928f8aa23e7b6c881e3f46.png";
 import Cloud from "@/src/assets/pngwing.com (1).png";
 import Cloud2 from "@/src/assets/pngwing.webp";
 
-import { useGSAP, gsap } from "@/src/lib/gsap";
+import { useGSAP, gsap  , SplitText } from "@/src/lib/gsap";
 
 export default function Hero() {
 // =========================
@@ -21,6 +22,9 @@ export default function Hero() {
 
 const heroRef = useRef(null);
 const textRef = useRef(null);
+const btn = useRef(null);
+const headline = useRef(null);
+const mainpara = useRef(null);
 
 const mainPhotoRef = useRef(null);
 
@@ -29,6 +33,7 @@ const rightCloudRef = useRef(null);
 const bottomCloudRef = useRef(null);
 
 const animationSectionRef = useRef(null);
+const ovellaybackground = useRef(null);
 
 const backgroundAnimationRef = useRef(null);
 const backgroundAnimation2Ref = useRef(null);
@@ -37,204 +42,218 @@ const backgroundAnimation2Ref = useRef(null);
 // GSAP
 // =========================
 
-useGSAP(
-    () => {
-    const mm = gsap.matchMedia();
+// useGSAP(
+//   () => {
+//     const mm = gsap.matchMedia();
 
-    mm.add("(min-width: 768px)", () => {
-        const animationSection = animationSectionRef.current;
+//     mm.add("(min-width: 768px)", () => {
+//       const hero = heroRef.current;
 
-        // -------------------------
-        // Main timeline
-        // -------------------------
+//       // ========================================
+//       // Main Hero Timeline
+//       // ========================================
 
-        const timeline = gsap.timeline({
-        scrollTrigger: {
-            trigger: animationSection,
-            start: "center top",
-            end: "+=5800",
-            scrub: 3,
-            toggleActions: "play none none reverse",
-        },
-        });
+//       const timeline = gsap.timeline({
+//         scrollTrigger: {
+//           trigger: hero,
+//           start: "top top",
+//           end: "+=4600",
+//           scrub: 3,
 
-        // -------------------------
-        // Pin Hero
-        // -------------------------
+//           // Hero stays fixed during animation
+//           pin: true,
 
-        gsap.to(heroRef.current, {
-        scrollTrigger: {
-            trigger: heroRef.current,
-            start: "top top",
-            end: "+=4600",
-            scrub: 3,
-            pin: true,
-            refreshPriority: 1,
-        },
-        });
+//           // IMPORTANT
+//           // Allows the next section to come after the pin
+//           pinSpacing: true,
 
-        // -------------------------
-        // Hero text animation
-        // -------------------------
+//           anticipatePin: 1,
+//         },
+//       });
 
-        gsap.to(textRef.current, {
-        scrollTrigger: {
-            trigger: animationSection,
-            start: "top top",
-            end: "+=1000",
-            scrub: 3,
-        },
-        scale: 0.95,
-        opacity: 0,
-        y: 10,
-        });
+//       // ========================================
+//       // Hero Text
+//       // ========================================
 
-        // -------------------------
-        // Main house animation
-        // -------------------------
+//       timeline.to(
+//         textRef.current,
+//         {
+//           scale: 0.94,
+//           y: 20,
+//           duration: 1,
+//             opacity:0
+//         },
+//         0
+//       );
 
-        gsap.to(mainPhotoRef.current, {
-        scrollTrigger: {
-            trigger: animationSection,
-            start: "top top",
-            end: "+=1000",
-            scrub: 3,
-        },
-        scale: 1.2,
-        y: -30,
-        });
+//       // ========================================
+//       // Main House
+//       // ========================================
 
-        // -------------------------
-        // SVG text animation
-        // -------------------------
+//       timeline.to(
+//         mainPhotoRef.current,
+//         {
+//           scale: 1.4,
+//           y: 20,
+//           duration: 1,
+//         },
+//         0
+//       );
 
-        timeline.to(
-        ".rr",
-        {
-            opacity: 1,
-            duration: 0.01,
-        },
-        "<"
-        );
+//       // ========================================
+//       // Clouds
+//       // ========================================
 
-        timeline.from(
-        ".text1",
-        {
-            drawSVG: 0,
-            stagger: {
-            each: 0.05,
-            from: "random",
-            },
-        },
-        "<"
-        );
+//       timeline.to(
+//         leftCloudRef.current,
+//         {
+//           x: -120,
+//           duration: 1,
+//         },
+//         0
+//       );
 
-        timeline.from(
-        ".text2",
-        {
-            drawSVG: 0,
-            stagger: {
-            each: 0.05,
-            from: "random",
-            },
-        },
-        "<"
-        );
+//       timeline.to(
+//         rightCloudRef.current,
+//         {
+//           x: 120,
+//           duration: 1,
+//         },
+//         0
+//       );
 
-        // -------------------------
-        // Main photo fade out
-        // -------------------------
+//       timeline.to(
+//         bottomCloudRef.current,
+//         {
+//           y: -60,
+//           duration: 1,
+//         },
+//         0
+//       );
 
-        gsap.to(mainPhotoRef.current, {
-        scrollTrigger: {
-            trigger: animationSection,
-            start: "bottom top",
-            end: "+=5800",
-            toggleActions: "play none none reverse",
-        },
-        delay: 1,
-        opacity: 0,
-        duration: 1,
-        });
+//       // ========================================
+//       // SVG
+//       // ========================================
 
-        // -------------------------
-        // Background animations
-        // -------------------------
+//       timeline.to(
+//         ".rr",
+//         {
+//           opacity: 1,
+//           duration: 0.1,
+//         },
+//         1
+//       );
 
-        gsap.to(backgroundAnimationRef.current, {
-        scrollTrigger: {
-            trigger: animationSection,
-            start: "center center",
-            end: "+=5800",
-        },
-       
-        opacity: 1,
-        duration: 0.8,
-        });
+//       timeline.from(
+//         ".text1",
+//         {
+//           drawSVG: 0,
+//           stagger: {
+//             each: 0.05,
+//             from: "random",
+//           },
+//           duration: 1,
+//         },
+//         "<"
+//       );
 
-        gsap.to(backgroundAnimation2Ref.current, {
-        scrollTrigger: {
-            trigger: animationSection,
-            start: "center center",
-            end: "+=5800",
-        },
-        opacity: 1,
-        duration: 0.8,
-        });
+//       timeline.from(
+//         ".text2",
+//         {
+//           drawSVG: 0,
+//           stagger: {
+//             each: 0.05,
+//             from: "random",
+//           },
+//           duration: 1,
+//         },
+//         "<"
+//       );
 
-        // -------------------------
-        // Left cloud
-        // -------------------------
+//       // ========================================
+//       // Hero Content Exit
+//       // ========================================
 
-        gsap.to(leftCloudRef.current, {
-        scrollTrigger: {
-            trigger: animationSection,
-            start: "top top",
-            end: "+=1000",
-            scrub: 3,
-        },
-        x: -120,
-        });
+//       timeline.to(
+//         mainPhotoRef.current,
+//         {
+//           opacity: 0,
+//           duration: 0.6,
+//         },
+//         2.2
+//       );
 
-        // -------------------------
-        // Right cloud
-        // -------------------------
+//       timeline.to(
+//         textRef.current,
+//         {
+//           opacity: 0,
+//           duration: 0.6,
+//         },
+//         2.2
+//       );
 
-        gsap.to(rightCloudRef.current, {
-        scrollTrigger: {
-            trigger: animationSection,
-            start: "top top",
-            end: "+=1000",
-            scrub: 3,
-        },
-        x: 120,
-        });
+//       // ========================================
+//       // Background Reveal
+//       // ========================================
 
-        // -------------------------
-        // Bottom cloud
-        // -------------------------
+//       timeline.to(
+//         backgroundAnimationRef.current,
+//         {
+//           opacity: 1,
+//           duration: 0.5,
+//         },
+//         2.8
+//       );
 
-        gsap.to(bottomCloudRef.current, {
-        scrollTrigger: {
-            trigger: animationSection,
-            start: "top top",
-            end: "+=1000",
-            scrub: 3,
-        },
-        y: -60,
-        });
-    });
+//       timeline.to(
+//         backgroundAnimation2Ref.current,
+//         {
+//           opacity: 1,
+//           duration: 0.5,
+//         },
+//         2.8
+//       );
+//     });
 
-    // Cleanup
-    return () => {
-        mm.revert();
-    };
-    },
-    {
-    scope: heroRef,
-    dependencies: [],
-    }
-);
+//     return () => {
+//       mm.revert();
+//     };
+//   },
+//   {
+//     scope: heroRef,
+//     dependencies: [],
+//   }
+// );
+useGSAP(()=>{
+const headlinetext= SplitText.create(headline.current,{
+        type:"lines",
+        mask:"lines"
+})
+const timehero = gsap.timeline({defaults:{ease:"none" , duration:0.7}});
+    timehero.from(headlinetext.lines,{
+    yPercent:100,
+    })
+    timehero.from(ovellaybackground.current,{
+        scale:1.05,
+    },"<")
+    timehero.from(leftCloudRef.current,{
+        y:200,
+    },"<")
+    timehero.from(rightCloudRef.current,{
+        y:200,
+    },"<")
+    timehero.to(mainPhotoRef.current,{
+        yPercent:-17
+    },"<")
+    timehero.from(mainpara.current,{
+        y:20,
+        opacity:0
+    },"-=0.3")
+    timehero.from(btn.current,{
+        y:10,
+        opacity:0
+    },"<")
+},{dependencies:[] , scope:heroRef})
 
 // =========================
 // JSX
@@ -250,17 +269,44 @@ return (
         flex-1
         flex-col
         items-center
+        z-1
         justify-center
         overflow-x-clip
         select-none
         bg-linear-to-b
-        from-sky-400
+        from-sky-600/50
         via-sky-200
         to-white
         font-sans
         dark:bg-black
     "
     >
+    <div ref={ovellaybackground} className="absolute min-w-full min-h-full inset-0 pointer-events-none opacity-50 ">
+    <Image
+        
+        src={Overlay}
+        sizes="100vw"
+        alt=""
+        className="w-full absolute h-full object-cover"
+    />
+    <Image
+        
+        src={Overlay}
+        sizes="100vw"
+        alt=""
+
+        className="w-full absolute top-0  -right-200 h-full object-cover"
+    />
+    </div>
+    <div
+    className="
+        absolute
+        inset-0
+        pointer-events-none
+        
+        bg-[radial-gradient(circle_at_0%_100%,rgba(255,100,60,0.28),transparent_95%)]
+        mask-[linear-gradient(to_bottom,black_0%,black_90%,transparent_100%)]
+    "></div>
     {/* ========================================
         Main Hero Image
         LCP Element
@@ -280,7 +326,9 @@ return (
         absolute
         bottom-0
         z-10
-        translate-y-1/4
+        scale-x-125
+        translate-y-1/2
+        md:scale-x-150
         pointer-events-none
         "
     />
@@ -310,36 +358,14 @@ return (
         quality={65}
         className="
             absolute
-            bottom-[-296px]
-            left-1/2
-            hidden md:block
+            md:bottom-[-396px]
+            bottom-[-420px]
+            md:left-1/2
+            blur-sm
             max-w-none
             -translate-x-1/2
             object-cover
-            scale-100
-            md:scale-105
-            lg:scale-100
-            [mask-image:linear-gradient(to_bottom,black_95%,transparent_100%)]
-        "
-        />
-        <Image
-        ref={bottomCloudRef}
-        src={Cloud2}
-        alt=""
-        width={1300}
-        height={500}
-        sizes="100vw"
-        loading="lazy"
-        quality={65}
-        className="
-            absolute
-            bottom-[-296px]
-            left-1/2
-            block md:hidden
-            max-w-none
-            -translate-x-1/2
-            object-cover
-            scale-100
+            scale-50
             md:scale-105
             lg:scale-100
             [mask-image:linear-gradient(to_bottom,black_95%,transparent_100%)]
@@ -393,7 +419,7 @@ return (
             left-0
             top-0
             z-20
-            flex
+            md:flex
             h-full
             w-full
             hidden
@@ -439,35 +465,42 @@ return (
         items-center
         justify-center
         text-center
-        md:bottom-35
+        md:bottom-30
         "
     >
         <h1
+        ref={headline}
         className="
-            mb-4
+            py-4
             text-4xl
             font-bold
+            tracking-tight
             text-gray-900
             md:text-5xl
-            lg:text-8xl
+            
+            lg:text-[114px]
+            
         "
         >
         Find What Moves You
         </h1>
 
         <p
+        ref={mainpara}
         className="
-            mb-3
+            mb-5
             max-w-2/3
             text-gray-900/90
             md:max-w-full
-            md:text-lg
+            md:text-2xl
+            font-semibold
         "
         >
-        Expert agents. Real guidance. A clear path to find what&apos;s next
+        Expert agents. Real guidance. <span className="text-gray-700/60">A clear path to find what&apos;s next</span>
         </p>
 
         <button
+        ref={btn}
         type="button"
         className="
             group
@@ -476,9 +509,9 @@ return (
             gap-2
             rounded-full
             bg-black
-            px-5
+            px-6
             py-2
-            text-sm
+            
             text-white
             transition-colors
             duration-300
@@ -522,19 +555,23 @@ return (
 
         <Image
         ref={leftCloudRef}
-        src={Cloud}
+        src={rightcloude}
         alt=""
         width={420}
         height={100}
         sizes="420px"
         loading="lazy"
-        quality={65}
+        quality={75}
         className="
             absolute
             left-0
-            top-50
+            md:-translate-x-1/4
+            -translate-x-1/2
+            top-60
             hidden md:block
-            opacity-80
+            opacity-45
+            scale-150
+            blur-[2px]
         "
         />
 
@@ -542,7 +579,7 @@ return (
 
         <Image
         ref={rightCloudRef}
-        src={Cloud}
+        src={rightcloude}
         alt=""
         width={400}
         height={100}
@@ -552,8 +589,15 @@ return (
         className="
             absolute
             right-0
-            top-20
-            opacity-80
+            md:translate-x-1/4
+            translate-x-1/2
+            top-50
+            md:opacity-50
+            opacity-50
+            md:scale-150
+            scale-125
+            blur-[1px]
+
         "
         />
     </div>

@@ -6,30 +6,35 @@ import { useRef } from "react";
 //gsap
 import { useGSAP , gsap  , SplitText } from "../lib/gsap";
 export default function About(){
-const para = useRef();
+const videoRef = useRef();
 const para2 = useRef();
 const section2 = useRef();
 useGSAP(()=>{
     const arrows = gsap.utils.toArray(".arr")
-    const parasplit = SplitText.create(para.current,{
-        type: "lines",
-    })
     const parasplit2 = SplitText.create(para2.current,{
         type:"lines",
         mask:"lines"
     })
-    gsap.from(parasplit.lines,{
+    const timeline = gsap.timeline({defaults:{ease:"none"},
         scrollTrigger:{
-        trigger:para.current,
-        start:"top center",
+        trigger:section2.current,
+        start:"10% bottom",
         once: true,
-        },
-        opacity:0,
-        scale:0.8,
-        y:30,
-        stagger:0.08,
-        duration:0.3
+        }
     })
+    timeline.to(".text-fill",{
+        clipPath: "inset(0 0% 0 0)",
+        duration:1.6,
+    })
+    timeline.fromTo(
+        videoRef.current,
+        {
+        clipPath: "inset(0 0 0 100%)",
+        },
+        {
+        clipPath: "inset(0 0 0 0%)",
+        duration:1,
+    },"<")
     const tl = gsap.timeline({
         scrollTrigger:{
         trigger:para2.current,
@@ -50,21 +55,39 @@ useGSAP(()=>{
         stagger:0.08
     })
     return ()=>{
-        parasplit.revert();
         parasplit2.revert();
     }
 },{scope:section2,dependencies:[]})
 
 return(
-    <section ref={section2} className="relative  overflow-x-clip  z-50  flex flex-col items-center">
+    <section ref={section2} className="relative  overflow-x-clip md:pt-60 z-2 pt-40   px-2  flex flex-col items-center">
         <div className="absolute min-w-full min-h-full  z-50">
             
 
         </div>
-        <div ref={para} className="paragrag  w-full  text-2xl text-center md:text-4xl md:text-end p-4 md:mt-0 mt-10   z-50">
-            Experience exceptional homes crafted for<br></br> comfort, elegance, and modern living.<br></br> Discover exclusive properties in the most<br></br> desirable neighborhoods.
+        <div  className="text-wrapper flex justify-end">
+            <div className="text-base text-center md:w-1/2 text-xl   md:text-5xl "> 
+            <span className="text-black/20">
+            Your life’s changing. Don’t just find a
+            place — find what’s next.
+            </span>
+            <span className="text-gray-300/30">We help you
+            move forward with clarity, confidence,
+            and the right agent by your side.
+            </span>
+            </div>
+            <div className="text-fill text-center md:w-1/2 text-xl  md:text-5xl "> 
+            <span className="text-black/90">
+            Your life’s changing. Don’t just find a
+            place — find what’s next.
+            </span>
+            <span className="text-gray-400/50">We help you
+            move forward with clarity, confidence,
+            and the right agent by your side.
+            </span>
         </div>
-        <div className="video md:w-352 md:h-260 p-3 md:p-0 w-full max-w-full h-100 mt-10  rounded-md md:mt-20">
+        </div>
+        <div ref={videoRef} className="video  md:w-352 md:h-260 p-1 md:p-0 w-full max-w-full h-100 mt-10  rounded-sm md:mt-20">
             <video
             className="w-full h-full object-cover rounded-md"
             src="https://res.cloudinary.com/dhmk6ap4o/video/upload/w_960,q_auto,f_auto/v1784033373/15272608_3840_2160_30fps_wlgnhs.mp4"

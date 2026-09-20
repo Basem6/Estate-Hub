@@ -4,6 +4,10 @@
   height: 0;
   display: none;
 }
+.noscroll{
+  overflow:hidden;
+  
+}
 * {
   scrollbar-width: none;
 }
@@ -41,4 +45,19 @@
   object-fit: cover;
   object-position: center;
 }
+.text-wrapper {
+  position: relative;
+}
+
+.text-base {
+  color: #d6d6d6;
+}
+
+.text-fill {
+  position: absolute;
+  right: 0;
+  color: #111;
+  clip-path: inset(0 100% 0 0);
+}
+
 
