@@ -200,7 +200,39 @@ return (
         Bottom Cloud
     ======================================== */}
 
-    
+    <div
+        className="
+        pointer-events-none
+        absolute
+        inset-x-0
+        bottom-0
+        z-40
+        h-75
+        "
+    >
+        <Image
+        ref={bottomCloudRef}
+        src={Cloud2}
+        alt=""
+        width={1600}
+        height={500}
+        sizes="100vw"
+        quality={25}
+        className="
+            absolute
+            md:-bottom-99
+            -bottom-102.5
+            md:left-1/2
+            blur-sm
+            max-w-none
+            -translate-x-1/2
+            object-cover
+            scale-50
+            md:scale-105
+            lg:scale-100
+        "
+        />
+    </div>
 
     <div
         ref={textRef}
