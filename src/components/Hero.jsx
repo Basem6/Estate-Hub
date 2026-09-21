@@ -31,226 +31,106 @@ const animationSectionRef = useRef(null);
 const ovellaybackground = useRef(null);
 
 
-// =========================
-// GSAP
-// =========================
+useGSAP(() => {
+    const headlineEl = headline.current;
 
-// useGSAP(
-//   () => {
-//     const mm = gsap.matchMedia();
+    if (!headlineEl) return;
 
-//     mm.add("(min-width: 768px)", () => {
-//       const hero = heroRef.current;
+    const split = SplitText.create(headlineEl, {
+        type: "lines",
+        mask: "lines",
+    });
 
-//       // ========================================
-//       // Main Hero Timeline
-//       // ========================================
+    const tl = gsap.timeline({
+        defaults: {
+        ease: "power2.out",
+        duration: 0.6,
+        },
+    });
 
-//       const timeline = gsap.timeline({
-//         scrollTrigger: {
-//           trigger: hero,
-//           start: "top top",
-//           end: "+=4600",
-//           scrub: 3,
+    // Headline
+    tl.from(split.lines, {
+        yPercent: 100,
+        stagger: 0.04,
+    });
 
-//           // Hero stays fixed during animation
-//           pin: true,
+    // Background
+    if (ovellaybackground.current) {
+        tl.from(
+        ovellaybackground.current,
+        {
+            scale: 1.05,
+        },
+        "<"
+        );
+    }
 
-//           // IMPORTANT
-//           // Allows the next section to come after the pin
-//           pinSpacing: true,
+    // Clouds
+    if (leftCloudRef.current) {
+        tl.from(
+        leftCloudRef.current,
+        {
+            y: 80,
+        },
+        "<"
+        );
+    }
 
-//           anticipatePin: 1,
-//         },
-//       });
+    if (rightCloudRef.current) {
+        tl.from(
+        rightCloudRef.current,
+        {
+            y: 80,
+        },
+        "<"
+        );
+    }
 
-//       // ========================================
-//       // Hero Text
-//       // ========================================
+    // Main image
+    // Don't animate it immediately if it's your LCP element.
+    if (mainPhotoRef.current) {
+        tl.to(
+        mainPhotoRef.current,
+        {
+            yPercent: -17,
+        },
+        "<"
+        );
+    }
 
-//       timeline.to(
-//         textRef.current,
-//         {
-//           scale: 0.94,
-//           y: 20,
-//           duration: 1,
-//             opacity:0
-//         },
-//         0
-//       );
+    // Paragraph
+    if (mainpara.current) {
+        tl.from(
+        mainpara.current,
+        {
+            y: 10,
+            opacity: 0,
+        },
+        "-=0.25"
+        );
+    }
 
-//       // ========================================
-//       // Main House
-//       // ========================================
+    // Button
+    if (btn.current) {
+        tl.from(
+        btn.current,
+        {
+            y: 10,
+            opacity: 0,
+        },
+        "<"
+        );
+    }
 
-//       timeline.to(
-//         mainPhotoRef.current,
-//         {
-//           scale: 1.4,
-//           y: 20,
-//           duration: 1,
-//         },
-//         0
-//       );
+    return () => {
+        split.revert();
+        tl.kill();
+    };
+    }, {
+    scope: heroRef,
+    dependencies: [],
+});
 
-//       // ========================================
-//       // Clouds
-//       // ========================================
-
-//       timeline.to(
-//         leftCloudRef.current,
-//         {
-//           x: -120,
-//           duration: 1,
-//         },
-//         0
-//       );
-
-//       timeline.to(
-//         rightCloudRef.current,
-//         {
-//           x: 120,
-//           duration: 1,
-//         },
-//         0
-//       );
-
-//       timeline.to(
-//         bottomCloudRef.current,
-//         {
-//           y: -60,
-//           duration: 1,
-//         },
-//         0
-//       );
-
-//       // ========================================
-//       // SVG
-//       // ========================================
-
-//       timeline.to(
-//         ".rr",
-//         {
-//           opacity: 1,
-//           duration: 0.1,
-//         },
-//         1
-//       );
-
-//       timeline.from(
-//         ".text1",
-//         {
-//           drawSVG: 0,
-//           stagger: {
-//             each: 0.05,
-//             from: "random",
-//           },
-//           duration: 1,
-//         },
-//         "<"
-//       );
-
-//       timeline.from(
-//         ".text2",
-//         {
-//           drawSVG: 0,
-//           stagger: {
-//             each: 0.05,
-//             from: "random",
-//           },
-//           duration: 1,
-//         },
-//         "<"
-//       );
-
-//       // ========================================
-//       // Hero Content Exit
-//       // ========================================
-
-//       timeline.to(
-//         mainPhotoRef.current,
-//         {
-//           opacity: 0,
-//           duration: 0.6,
-//         },
-//         2.2
-//       );
-
-//       timeline.to(
-//         textRef.current,
-//         {
-//           opacity: 0,
-//           duration: 0.6,
-//         },
-//         2.2
-//       );
-
-//       // ========================================
-//       // Background Reveal
-//       // ========================================
-
-//       timeline.to(
-//         backgroundAnimationRef.current,
-//         {
-//           opacity: 1,
-//           duration: 0.5,
-//         },
-//         2.8
-//       );
-
-//       timeline.to(
-//         backgroundAnimation2Ref.current,
-//         {
-//           opacity: 1,
-//           duration: 0.5,
-//         },
-//         2.8
-//       );
-//     });
-
-//     return () => {
-//       mm.revert();
-//     };
-//   },
-//   {
-//     scope: heroRef,
-//     dependencies: [],
-//   }
-// );
-useGSAP(()=>{
-const headlinetext= SplitText.create(headline.current,{
-        type:"lines",
-        mask:"lines"
-})
-const timehero = gsap.timeline({defaults:{ease:"none" , duration:0.7}});
-    timehero.from(headlinetext.lines,{
-    yPercent:100,
-    })
-    timehero.from(ovellaybackground.current,{
-        scale:1.05,
-    },"<")
-    timehero.from(leftCloudRef.current,{
-        y:200,
-    },"<")
-    timehero.from(rightCloudRef.current,{
-        y:200,
-    },"<")
-    timehero.to(mainPhotoRef.current,{
-        yPercent:-17
-    },"<")
-    timehero.from(mainpara.current,{
-        y:20,
-        opacity:0
-    },"-=0.3")
-    timehero.from(btn.current,{
-        y:10,
-        opacity:0
-    },"<")
-},{dependencies:[] , scope:heroRef})
-
-// =========================
-// JSX
-// =========================
 
 return (
     <main
@@ -280,15 +160,8 @@ return (
         src={Overlay}
         sizes="100vw"
         alt=""
-        className="w-full  left-0 -top-40 absolute md:top-0 h-full object-cover"
-    />
-    <Image
-        
-        src={Overlay}
-        sizes="100vw"
-        alt=""
-
-        className="w-full md:block hidden absolute top-0  -right-200 h-full object-cover"
+        quality={20}
+        className="w-full  scale-x-200 left-0 -top-40 absolute md:top-0 h-full object-cover"
     />
     </div>
     <div
@@ -296,7 +169,6 @@ return (
         absolute
         inset-0
         pointer-events-none
-        
         bg-[radial-gradient(circle_at_0%_100%,rgba(255,100,60,0.28),transparent_95%)]
         mask-[linear-gradient(to_bottom,black_0%,black_90%,transparent_100%)]
     ">
@@ -306,17 +178,17 @@ return (
         ref={mainPhotoRef}
         src={MainPhoto}
         alt="Hero"
-        width={700}
-        height={700}
-        sizes="(max-width: 768px) 100vw, 700px"
+        width={600}
+        height={600}
         priority
-        fetchPriority="high"
-        quality={75}
+        sizes="(max-width: 768px) 100vw, 600px"
+        quality={30}
         className="
         absolute
         bottom-10
         md:bottom-0
         z-10
+        w-auto
         scale-x-125
         translate-y-1/2
         md:scale-x-150
@@ -345,8 +217,7 @@ return (
         width={1700}
         height={500}
         sizes="100vw"
-        loading="lazy"
-        quality={65}
+        quality={25}
         className="
             absolute
             md:bottom-[-396px]
@@ -359,6 +230,7 @@ return (
             scale-50
             md:scale-105
             lg:scale-100
+            w-auto
             [mask-image:linear-gradient(to_bottom,black_95%,transparent_100%)]
         "
         />
@@ -465,15 +337,15 @@ return (
         alt=""
         width={520}
         height={300}
+        quality={35}
         sizes="520px"
-        loading="lazy"
-        quality={75}
         className="
             absolute
             left-0
             md:-translate-x-1/4
             -translate-x-1/2
             top-60
+            w-auto
             hidden md:block
             opacity-45
             scale-150
@@ -490,14 +362,14 @@ return (
         width={500}
         height={300}
         sizes="500px"
-        loading="lazy"
-        quality={65}
+        quality={35}
         className="
             absolute
             right-0
             md:translate-x-1/4
             translate-x-2/3
             top-50
+            w-auto
             md:opacity-50
             opacity-50
             md:scale-150
