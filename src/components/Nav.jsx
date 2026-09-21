@@ -5,6 +5,7 @@ import { ChevronDown, X } from "lucide-react";
 import { usePathname } from "next/navigation";
 import { useGSAP, gsap , SplitText } from "../lib/gsap";
 import { useEffect, useRef, useState } from "react";
+import Image from "next/image";
 
 export default function Nav() {
 const [openNav, setOpenNav] = useState(false);
@@ -133,9 +134,6 @@ useGSAP(() => {
 
 return (
     <>
-    {/* =====================================================
-        DESKTOP / MAIN NAV
-    ===================================================== */}
 
     <div
         ref={nav}
@@ -157,48 +155,15 @@ return (
         {/* =================================================
             LOGO
         ================================================= */}
+        <div className="logo">
 
-        <Link
-            href="/"
-            className="
-            pointer-events-auto
-            relative
-            right-7
-            min-h-10
-            min-w-37
-            md:right-0
-            "
-        >
-            <svg
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 500 500"
-            className="absolute left-0 top-0 scale-125"
-            >
-            <text
-                x="207.312"
-                y="101.836"
-                transform="matrix(2.823799 0 0 2.52825 -465.455055 -139.180376)"
-                style={{
-                fontFamily: "Arial, sans-serif",
-                fontSize: 28,
-                fontWeight: 700,
-                paintOrder: "fill",
-                whiteSpace: "pre",
-                }}
-            >
-                F ND
-            </text>
-
-            <path
-                d="M187.457 68.085L187.457 85.535L187.457 116.643L171.374 117.722L176.735 91.825L169.588 68.085Z"
-                fill="currentColor"
-                stroke="currentColor"
-                fillRule="nonzero"
-                style={{ paintOrder: "stroke" }}
+            <Image 
+            src="/logo.svg"
+            alt="logo" 
+            width={80}
+            height={80}
             />
-            </svg>
-        </Link>
-
+        </div>
         {/* =================================================
             DESKTOP NAVIGATION
         ================================================= */}
@@ -319,7 +284,7 @@ return (
             onClick={() => setOpenNav(!openNav)}
             className="
                 relative
-                bottom-2
+                bottom-1
                 flex
                 z-50
                 items-center
@@ -360,11 +325,6 @@ return (
         </div>
     </div>
 
-    {/* =====================================================
-        MOBILE NAV
-        IMPORTANT:
-        Do NOT use {openNav && ...}
-    ===================================================== */}
 
     <div
         ref={mobilenav}
@@ -476,7 +436,7 @@ return (
             bg-black
             px-7
             py-3
-            bottom-5
+            bottom-15
             font-semibold
             text-white
             "

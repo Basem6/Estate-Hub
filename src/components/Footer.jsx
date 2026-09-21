@@ -62,36 +62,16 @@ export default function Footer(){
             </tr>
             </tbody>
             </table>
-            <div className="md:h-100 h-80 ointer-events-none md:mt-0 mt-10">
-                <svg
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="85 0 500 500"
-                className="w-full h-auto scale-125"
-                >
-                <text
-                    x="207.312"
-                    y="101.836"
-                    transform="matrix(4.748763, 0, 0, 4.391594, -859.228467, -274.465122)"
-                    style={{
-                    fill: "#fff",
-                    fontFamily: "Arial, sans-serif",
-                    fontSize: 28,
-                    fontWeight: 700,
-                    paintOrder: "fill",
-                    whiteSpace: "pre",
-                    }}
-                >
-                    F ND
-                </text>
+            <div>
+                <Image
+                    src={'/logowihte.svg'}
+                    alt="logo"
+                    width={1000}
+                    height={200}
+                    className="pointer-events-none"
+                    >
 
-                <path
-                    d="M241.725 85.291L241.725 116.468L241.725 172.045L213.136 173.975L222.664 127.707L209.959 85.291Z"
-                    fill="white"
-                    stroke="white"
-                    fillRule="nonzero"
-                    style={{ paintOrder: "stroke" }}
-                />
-                </svg>
+                </Image>
             </div>
             </div> 
             <div className="w-1/3  justify-between hidden md:flex">

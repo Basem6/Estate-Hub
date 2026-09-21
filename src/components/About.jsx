@@ -61,10 +61,6 @@ useGSAP(()=>{
 
 return(
     <section ref={section2} className="relative  overflow-x-clip md:pt-60 z-2 pt-40   px-2  flex flex-col items-center">
-        <div className="absolute min-w-full min-h-full  z-50">
-            
-
-        </div>
         <div  className="text-wrapper flex justify-end">
             <div className="text-base text-center md:w-1/2 text-xl   md:text-5xl "> 
             <span className="text-black/20">

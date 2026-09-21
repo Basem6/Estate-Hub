@@ -3,14 +3,9 @@ import { useRef } from "react";
 import Image from "next/image";
 import { MoveRight } from "lucide-react";
 import Overlay from "../assets/photos/8ef761d302445d24bbb9db1cd19a4857.png"
-import FindText from "@/src/assets/TextToSvgComponent";
-import RealEstate from "@/src/assets/TextToSvgComponent (1)";
-import Textbg from "@/src/assets/Textonbackground";
-import Textbg2 from "@/src/assets/Textonbg2";
 
 import MainPhoto from "@/src/assets/photos/magnific_ohM7s2T829.webp";
 import rightcloude from "@/src/assets/photos/7d59032b42928f8aa23e7b6c881e3f46.png";
-import Cloud from "@/src/assets/pngwing.com (1).png";
 import Cloud2 from "@/src/assets/pngwing.webp";
 
 import { useGSAP, gsap  , SplitText } from "@/src/lib/gsap";
@@ -35,8 +30,6 @@ const bottomCloudRef = useRef(null);
 const animationSectionRef = useRef(null);
 const ovellaybackground = useRef(null);
 
-const backgroundAnimationRef = useRef(null);
-const backgroundAnimation2Ref = useRef(null);
 
 // =========================
 // GSAP
@@ -281,13 +274,13 @@ return (
         dark:bg-black
     "
     >
-    <div ref={ovellaybackground} className="absolute min-w-full min-h-full inset-0 pointer-events-none opacity-50 ">
+    <div ref={ovellaybackground} className="absolute min-w-full top-0  min-h-full inset-0 pointer-events-none opacity-30 ">
     <Image
         
         src={Overlay}
         sizes="100vw"
         alt=""
-        className="w-full absolute h-full object-cover"
+        className="w-full  left-0 -top-40 absolute md:top-0 h-full object-cover"
     />
     <Image
         
@@ -295,7 +288,7 @@ return (
         sizes="100vw"
         alt=""
 
-        className="w-full absolute top-0  -right-200 h-full object-cover"
+        className="w-full md:block hidden absolute top-0  -right-200 h-full object-cover"
     />
     </div>
     <div
@@ -306,11 +299,8 @@ return (
         
         bg-[radial-gradient(circle_at_0%_100%,rgba(255,100,60,0.28),transparent_95%)]
         mask-[linear-gradient(to_bottom,black_0%,black_90%,transparent_100%)]
-    "></div>
-    {/* ========================================
-        Main Hero Image
-        LCP Element
-    ======================================== */}
+    ">
+    </div>
 
     <Image
         ref={mainPhotoRef}
@@ -324,7 +314,8 @@ return (
         quality={75}
         className="
         absolute
-        bottom-0
+        bottom-10
+        md:bottom-0
         z-10
         scale-x-125
         translate-y-1/2
@@ -359,7 +350,7 @@ return (
         className="
             absolute
             md:bottom-[-396px]
-            bottom-[-420px]
+            bottom-[-410px]
             md:left-1/2
             blur-sm
             max-w-none
@@ -372,87 +363,6 @@ return (
         "
         />
     </div>
-
-    {/* ========================================
-        Desktop SVG Content
-    ======================================== */}
-
-    {/* <div
-        id="se"
-        className="
-        absolute
-        left-0
-        top-0
-        flex
-        min-h-screen
-        min-w-full
-        items-center
-        justify-center
-        "
-    >
-        <div
-        
-        className="
-            relative
-            z-20
-            hidden
-            flex-col
-            items-center
-            justify-center
-            gap-16
-            text-center
-            opacity-0
-            pointer-events-none
-            lg:flex
-            rr
-        "
-        >
-        <RealEstate />
-
-        <FindText />
-
-        {/* Background SVG animations */}
-     {/* <div
-            className="
-            pointer-events-none
-            absolute
-            left-0
-            top-0
-            z-20
-            md:flex
-            h-full
-            w-full
-            hidden
-            flex-col
-            items-center
-            justify-center
-            
-            text-center
-            opacity-0
-            lg:flex
-            rr
-            "
-        >
-            <div
-            ref={backgroundAnimationRef}
-            className="absolute top-0  opacity-0 z-20"
-            >
-            <Textbg />
-            </div>
-
-            <div
-            ref={backgroundAnimation2Ref} 
-            className="absolute bottom-0 opacity-0 z-20"
-            >
-            <Textbg2 />
-            </div>
-        </div> 
-        </div>
-    </div> */}
-
-    {/* ========================================
-        Hero Text
-    ======================================== */}
 
     <div
         ref={textRef}
@@ -534,10 +444,6 @@ return (
         </button>
     </div>
 
-    {/* ========================================
-        Animated Side Clouds
-    ======================================== */}
-
     <div
         ref={animationSectionRef}
         className="
@@ -557,9 +463,9 @@ return (
         ref={leftCloudRef}
         src={rightcloude}
         alt=""
-        width={420}
-        height={100}
-        sizes="420px"
+        width={520}
+        height={300}
+        sizes="520px"
         loading="lazy"
         quality={75}
         className="
@@ -581,21 +487,21 @@ return (
         ref={rightCloudRef}
         src={rightcloude}
         alt=""
-        width={400}
-        height={100}
-        sizes="400px"
+        width={500}
+        height={300}
+        sizes="500px"
         loading="lazy"
         quality={65}
         className="
             absolute
             right-0
             md:translate-x-1/4
-            translate-x-1/2
+            translate-x-2/3
             top-50
             md:opacity-50
             opacity-50
             md:scale-150
-            scale-125
+            
             blur-[1px]
 
         "
