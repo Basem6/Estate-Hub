@@ -25,7 +25,6 @@ const mainPhotoRef = useRef(null);
 
 const leftCloudRef = useRef(null);
 const rightCloudRef = useRef(null);
-const bottomCloudRef = useRef(null);
 
 const animationSectionRef = useRef(null);
 const ovellaybackground = useRef(null);
@@ -204,14 +203,13 @@ return (
         className="
         pointer-events-none
         absolute
-        inset-x-0
+        inset-0
         bottom-0
         z-40
-        h-75
         "
     >
         <Image
-        ref={bottomCloudRef}
+        
         src={Cloud2}
         alt=""
         width={1600}
@@ -227,6 +225,7 @@ return (
             max-w-none
             -translate-x-1/2
             object-cover
+            scale-100
             md:scale-105
             lg:scale-100
         "
