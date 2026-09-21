@@ -2,7 +2,7 @@
 
 ### Desktop
 
-![Desktop Preview](./src//assets/screenshots//Screenshot%202026-07-15%20091811.png)
+![Desktop Preview](./src/assets/screenshots/Screenshot%202026-07-15%20091811.png)
 # 🏡 DreamHomes - Real Estate Landing Page
 
 A modern, elegant, and fully responsive real estate landing page built with **Next.js**, **TypeScript**, **Tailwind CSS**, and **GSAP**. The project is designed to showcase luxury homes and rental properties with smooth animations, high performance, and a premium user experience.
