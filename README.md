@@ -64,7 +64,7 @@ A modern, elegant, and fully responsive real estate landing page built with **Ne
 Clone the repository
 
 ```bash
-git clone https://github.com/your-username/dreamhomes.git
+git clone https://github.com/Basem6/Estate-Hub.git
 ```
 
 Go to the project directory
@@ -97,11 +97,7 @@ http://localhost:3000
 
 - Hero
 - About
-- Featured Properties
 - Why Choose Us
-- Services
-- Testimonials
-- Contact
 - Footer
 
 ---
@@ -193,8 +189,7 @@ npm run lint
 
 ## 📈 Lighthouse Goals
 
-- Performance: 95+
-- Accessibility: 100
+- Performance: 90+
 - Best Practices: 100
 - SEO: 100
 
@@ -230,20 +225,6 @@ git push origin feature/new-feature
 ## 👨‍💻 Author
 
 **Basem Mahmoud**
-
-Front-End Developer
-
-- HTML5
-- CSS3
-- JavaScript
-- TypeScript
-- React
-- Next.js
-- Tailwind CSS
-- GSAP
-
-GitHub:
-https://github.com/Basem6
 
 LinkedIn:
 https://www.linkedin.com/in/basem-mahmoud-831162399
