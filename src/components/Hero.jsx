@@ -230,7 +230,6 @@ return (
             scale-50
             md:scale-105
             lg:scale-100
-            w-auto
             [mask-image:linear-gradient(to_bottom,black_95%,transparent_100%)]
         "
         />
