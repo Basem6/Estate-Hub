@@ -67,12 +67,6 @@ Clone the repository
 git clone https://github.com/Basem6/Estate-Hub.git
 ```
 
-Go to the project directory
-
-```bash
-cd dreamhomes
-```
-
 Install dependencies
 
 ```bash
