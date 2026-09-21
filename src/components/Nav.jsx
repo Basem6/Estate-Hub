@@ -69,11 +69,13 @@ useEffect(() => {
     gsap.fromTo(
         mobileMenu,
         {
+        opacity:1,
         clipPath: "inset(0 0 100% 0)",
         },
         {
         clipPath: "inset(0 0 0% 0)",
         duration: 0.9,
+        opacity:1,
         ease: "power3.inOut",
         }
     );
@@ -103,6 +105,7 @@ useEffect(() => {
     gsap.to(mobileMenu, {
         clipPath: "inset(0 0 100% 0)",
         duration: 0.7,
+        opacity:0,
         ease: "power3.inOut",
     });
     }
@@ -421,25 +424,23 @@ return (
             gap-3
             text-left">
             <span>Paperwork</span>
-            <span><ChevronDown size={22} /></span>
+            <span className="relative top-1"><ChevronDown size={22} /></span>
             </div>
             
         </button>
 
         <button
             type="button"
-            className="
-            
-            mobile-link
-            
-            "
+            className="mobile-link"
         >   
-            <div className="flex
+            <div className="
+            flex
             items-center
             gap-3
             text-left">
-                <span>Resources</span>
-                <span><ChevronDown size={22} /></span>
+                <div> <span>Resources</span></div>
+
+                <span className="relative top-1"><ChevronDown size={22} /></span>
             </div>
             
         </button>
@@ -456,7 +457,7 @@ return (
 
             text-left">
                 <span>About</span>
-            <span><ChevronDown size={22} /></span>
+            <span className="relative top-1"><ChevronDown size={22} /></span>
             </div>
             
         </button>

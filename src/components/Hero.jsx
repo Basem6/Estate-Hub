@@ -377,7 +377,7 @@ return (
         Desktop SVG Content
     ======================================== */}
 
-    <div
+    {/* <div
         id="se"
         className="
         absolute
@@ -412,7 +412,7 @@ return (
         <FindText />
 
         {/* Background SVG animations */}
-     <div
+     {/* <div
             className="
             pointer-events-none
             absolute
@@ -448,7 +448,7 @@ return (
             </div>
         </div> 
         </div>
-    </div>
+    </div> */}
 
     {/* ========================================
         Hero Text
