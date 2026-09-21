@@ -158,6 +158,7 @@ return (
         
         src={Overlay}
         sizes="100vw"
+        priority
         alt=""
         quality={20}
         className="w-full  scale-x-200 left-0 -top-40 absolute md:top-0 h-full object-cover"
@@ -179,7 +180,6 @@ return (
         alt="Hero"
         width={700}
         height={700}
-        priority
         sizes="(max-width: 768px) 100vw, 700px"
         quality={50}
         className="
