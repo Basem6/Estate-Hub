@@ -200,40 +200,7 @@ return (
         Bottom Cloud
     ======================================== */}
 
-    <div
-        className="
-        pointer-events-none
-        absolute
-        inset-x-0
-        bottom-0
-        z-40
-        h-75
-        "
-    >
-        <Image
-        ref={bottomCloudRef}
-        src={Cloud2}
-        alt=""
-        width={1700}
-        height={500}
-        sizes="100vw"
-        quality={25}
-        className="
-            absolute
-            md:bottom-[-396px]
-            bottom-[-410px]
-            md:left-1/2
-            blur-sm
-            max-w-none
-            -translate-x-1/2
-            object-cover
-            scale-50
-            md:scale-105
-            lg:scale-100
-            [mask-image:linear-gradient(to_bottom,black_95%,transparent_100%)]
-        "
-        />
-    </div>
+    
 
     <div
         ref={textRef}
