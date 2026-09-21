@@ -178,17 +178,17 @@ return (
         ref={mainPhotoRef}
         src={MainPhoto}
         alt="Hero"
-        width={600}
-        height={600}
+        width={700}
+        height={700}
         priority
-        sizes="(max-width: 768px) 100vw, 600px"
-        quality={30}
+        sizes="(max-width: 768px) 100vw, 700px"
+        quality={50}
         className="
         absolute
         bottom-10
         md:bottom-0
         z-10
-        w-auto
+        
         scale-x-125
         translate-y-1/2
         md:scale-x-150
