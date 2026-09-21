@@ -220,11 +220,10 @@ return (
         quality={25}
         className="
             absolute
-            md:-bottom-99
+            md:-bottom-95
             -bottom-102.5
             md:left-1/2
             blur-sm
-            max-w-none
             -translate-x-1/2
             object-cover
             scale-50
