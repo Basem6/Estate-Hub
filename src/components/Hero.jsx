@@ -203,19 +203,20 @@ return (
         className="
         pointer-events-none
         absolute
-        inset-0
+        inset-x-0
         bottom-0
         z-40
+        h-75
         "
     >
         <Image
         
         src={Cloud2}
         alt=""
-        width={1600}
+        width={1700}
         height={500}
         sizes="100vw"
-        quality={25}
+        quality={20}
         className="
             absolute
             md:-bottom-99
@@ -225,7 +226,7 @@ return (
             max-w-none
             -translate-x-1/2
             object-cover
-            scale-100
+            scale-50
             md:scale-105
             lg:scale-100
         "
